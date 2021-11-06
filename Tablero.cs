@@ -13,16 +13,20 @@ namespace WindowsFormsApp5_ESTE
     public partial class Tablero : Form
     {
         Main main;
-        
+        int cont = 1;
         public Tablero(Main main)
         {
             InitializeComponent();
             this.main = main;
-            char[,] tab = Program.Programa(this);
             
+            char[,] tab = Program.Programa(this);
+            Titulo.Text = "Tablero " + cont;
             imprimir.Text = Program.Imprimir(tab);
         }
-
+        public void setCont(int c)
+        {
+            this.cont = c;
+        }
         private void Volver_Click(object sender, EventArgs e)
         {
             // Main main = new Main();
@@ -45,9 +49,14 @@ namespace WindowsFormsApp5_ESTE
         {
             char[,] tab = Program.Programa(this);
             imprimir.Text = Program.Imprimir(tab);
-            
+            setCont(++cont);
+            Titulo.Text = "Tablero " + cont;
+
         }
 
-        
+        private void Titulo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

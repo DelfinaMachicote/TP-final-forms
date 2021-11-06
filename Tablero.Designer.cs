@@ -33,6 +33,7 @@ namespace WindowsFormsApp5_ESTE
             this.Cerrar = new System.Windows.Forms.Button();
             this.imprimir = new System.Windows.Forms.TextBox();
             this.Siguiente_tablero = new System.Windows.Forms.Button();
+            this.Titulo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Volver
@@ -58,7 +59,7 @@ namespace WindowsFormsApp5_ESTE
             // imprimir
             // 
             this.imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imprimir.Location = new System.Drawing.Point(207, 37);
+            this.imprimir.Location = new System.Drawing.Point(207, 58);
             this.imprimir.Multiline = true;
             this.imprimir.Name = "imprimir";
             this.imprimir.ReadOnly = true;
@@ -76,11 +77,22 @@ namespace WindowsFormsApp5_ESTE
             this.Siguiente_tablero.UseVisualStyleBackColor = true;
             this.Siguiente_tablero.Click += new System.EventHandler(this.Siguiente_tablero_Click);
             // 
+            // Titulo
+            // 
+            this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.Location = new System.Drawing.Point(207, 20);
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            this.Titulo.Size = new System.Drawing.Size(382, 38);
+            this.Titulo.TabIndex = 4;
+            this.Titulo.TextChanged += new System.EventHandler(this.Titulo_TextChanged);
+            // 
             // Tablero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Titulo);
             this.Controls.Add(this.Siguiente_tablero);
             this.Controls.Add(this.imprimir);
             this.Controls.Add(this.Cerrar);
@@ -98,5 +110,6 @@ namespace WindowsFormsApp5_ESTE
         private System.Windows.Forms.Button Cerrar;
         private System.Windows.Forms.TextBox imprimir;
         private System.Windows.Forms.Button Siguiente_tablero;
+        private System.Windows.Forms.TextBox Titulo;
     }
 }

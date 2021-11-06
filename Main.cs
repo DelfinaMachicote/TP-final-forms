@@ -22,7 +22,6 @@ namespace WindowsFormsApp5_ESTE
             Tablero tablero = new Tablero(this);
             tablero.Show();
             this.Hide();
-            
 
         }
 

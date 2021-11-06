@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alfil.cs" />
+    <Compile Include="Aviso1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aviso1.Designer.cs">
+      <DependentUpon>Aviso1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caballo.cs" />
     <Compile Include="Costos.cs">
       <SubType>Form</SubType>
@@ -72,6 +78,9 @@
       <DependentUpon>Tablero.cs</DependentUpon>
     </Compile>
     <Compile Include="Torre.cs" />
+    <EmbeddedResource Include="Aviso1.resx">
+      <DependentUpon>Aviso1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Costos.resx">
       <DependentUpon>Costos.cs</DependentUpon>
     </EmbeddedResource>

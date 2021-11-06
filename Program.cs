@@ -76,8 +76,6 @@ namespace WindowsFormsApp5_ESTE
                 if (cont_posiciones > 63)
                 {
                     cont_tableros++;
-                    
-                    Console.WriteLine("Tablero numero " + cont_tableros + "\n");
                     Imprimir(tablero);
 
                 }
@@ -99,10 +97,7 @@ namespace WindowsFormsApp5_ESTE
             t2.x = 7;//la torre 2 estara en la columna 8
             t2.y = 7;
 
-            
-
-
-
+          
             while ((reina.x == c2.x && reina.y == c2.y) || (c2.x == a2.x && c2.y == a2.y) || (c2.x == c1.x && c2.y == c1.y) || (a1.x == c2.x && a1.y == c2.y) || (a2.x == c2.x && a2.y == c2.y) || (reina.x == c1.x && reina.y == c1.y) || (c1.x == a2.x && c1.y == a2.y) || (a1.x == c1.x && a1.y == c1.y) || (c1.x == c2.x && c1.y == c2.y) || (a2.x == c1.x && a2.y == c1.y) || (a2.x == rey.x && a2.y == rey.y) || (reina.x == a2.x && reina.y == a2.y) || (a1.x == a2.x && a1.y == a2.y) || (a2.x == c1.x && a2.y == c1.y) || (a2.x == c2.x && a2.y == c2.y) || (a1.x == rey.x && a1.y == rey.y) || (reina.x == a1.x && reina.y == a1.y) || (a1.x == a2.x && a1.y == a2.y) || (a1.x == c1.x && a1.y == c1.y) || (a1.x == c2.x && a1.y == c2.y) || (reina.x == rey.x && reina.y == rey.y) || (rey.x == a1.x && rey.y == a1.y) || (rey.x == a2.x && rey.y == a2.y) || (reina.x == rey.x && reina.y == rey.y) || (reina.x == a1.x && reina.y == a1.y) || (reina.x == a2.x && reina.y == a2.y) || (reina.x == c2.x && reina.y == c2.y) || (reina.x == c1.x && reina.y == c1.y))
             {
                 reina.x = rnd.Next(2, 5);
