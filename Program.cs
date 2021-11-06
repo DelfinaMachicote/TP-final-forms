@@ -22,7 +22,7 @@ namespace WindowsFormsApp5_ESTE
 
         public static char[,] Programa(Tablero ta)
         {
-            Tablero t = ta;
+            
             int cont_tableros = 0;
             //bool[,] matrizOriginal = random(n, 50); //Creo la matriz random
             //bool[,] tablero = new bool[8, 8];

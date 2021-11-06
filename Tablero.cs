@@ -13,12 +13,14 @@ namespace WindowsFormsApp5_ESTE
     public partial class Tablero : Form
     {
         Main main;
+        
         public Tablero(Main main)
         {
             InitializeComponent();
             this.main = main;
-            char[,] tab=Program.Programa(this);
-          imprimir.Text = Program.Imprimir(tab);
+            char[,] tab = Program.Programa(this);
+            
+            imprimir.Text = Program.Imprimir(tab);
         }
 
         private void Volver_Click(object sender, EventArgs e)

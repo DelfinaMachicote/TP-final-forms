@@ -48,12 +48,6 @@
   <ItemGroup>
     <Compile Include="Alfil.cs" />
     <Compile Include="Caballo.cs" />
-    <Compile Include="Cargando.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cargando.Designer.cs">
-      <DependentUpon>Cargando.cs</DependentUpon>
-    </Compile>
     <Compile Include="Costos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,7 +62,6 @@
     </Compile>
     <Compile Include="Pieza.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Programa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reina.cs" />
     <Compile Include="Rey.cs" />
@@ -79,9 +72,6 @@
       <DependentUpon>Tablero.cs</DependentUpon>
     </Compile>
     <Compile Include="Torre.cs" />
-    <EmbeddedResource Include="Cargando.resx">
-      <DependentUpon>Cargando.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Costos.resx">
       <DependentUpon>Costos.cs</DependentUpon>
     </EmbeddedResource>
