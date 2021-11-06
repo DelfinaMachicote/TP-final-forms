@@ -19,11 +19,26 @@ namespace WindowsFormsApp5_ESTE
             InitializeComponent();
             this.tablero = tablero;
             this.main = main;
+            aviso.Text = "Ya se encontraron los 10 tableros";
         }
 
         private void Volver_Click(object sender, EventArgs e)
         {
+            main.Show();
+            this.Close();
+            tablero.Close();
+        }
 
+        private void aviso_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            tablero.Close();
+            main.Close();
         }
     }
 }

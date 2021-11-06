@@ -77,7 +77,6 @@ namespace WindowsFormsApp5_ESTE
                 {
                     cont_tableros++;
                     Imprimir(tablero);
-
                 }
                 aux = tablero;
 
@@ -87,7 +86,8 @@ namespace WindowsFormsApp5_ESTE
         }
 
         public static void Asignar(Reina reina, Rey rey, Torre t1, Torre t2, Alfil a1, Alfil a2, Caballo c1, Caballo c2)
-        {//pasamos todas las piezas por separado porque salta error cada vez que casteamos la clase padre
+        {
+            //pasamos todas las piezas por separado porque salta error cada vez que casteamos la clase padre
 
 
             Random rnd = new Random();
@@ -144,8 +144,6 @@ namespace WindowsFormsApp5_ESTE
             {
                 for (int j = 0; j < 8; j++)
                 {
-
-                    //Console.Write(tablero[j, i] + "    ");
                     t += tablero[j, i] + "   ";
                 }
                 t += "\n";

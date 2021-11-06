@@ -47,10 +47,19 @@ namespace WindowsFormsApp5_ESTE
 
         private void Siguiente_tablero_Click(object sender, EventArgs e)
         {
-            char[,] tab = Program.Programa(this);
-            imprimir.Text = Program.Imprimir(tab);
-            setCont(++cont);
-            Titulo.Text = "Tablero " + cont;
+            if(cont <= 1)
+            {
+                char[,] tab = Program.Programa(this);
+                imprimir.Text = Program.Imprimir(tab);
+                setCont(++cont);
+                Titulo.Text = "Tablero " + cont;
+            }
+            else
+            {
+                Aviso1 aviso = new Aviso1(main,this);
+                aviso.Show();
+            }
+           
 
         }
 

@@ -15,6 +15,7 @@ namespace WindowsFormsApp5_ESTE
         public Main()
         {
             InitializeComponent();
+            textBox2.Text = "Menú";
         }
 
         private void Iniciar_Click(object sender, EventArgs e)
@@ -35,6 +36,16 @@ namespace WindowsFormsApp5_ESTE
         private void Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

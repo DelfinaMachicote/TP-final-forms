@@ -32,13 +32,15 @@ namespace WindowsFormsApp5_ESTE
             this.Iniciar = new System.Windows.Forms.Button();
             this.calcular_costos = new System.Windows.Forms.Button();
             this.Cerrar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Iniciar
             // 
-            this.Iniciar.Location = new System.Drawing.Point(377, 351);
+            this.Iniciar.Location = new System.Drawing.Point(76, 351);
             this.Iniciar.Name = "Iniciar";
-            this.Iniciar.Size = new System.Drawing.Size(117, 59);
+            this.Iniciar.Size = new System.Drawing.Size(155, 60);
             this.Iniciar.TabIndex = 0;
             this.Iniciar.Text = "Iniciar";
             this.Iniciar.UseVisualStyleBackColor = true;
@@ -46,35 +48,65 @@ namespace WindowsFormsApp5_ESTE
             // 
             // calcular_costos
             // 
-            this.calcular_costos.Location = new System.Drawing.Point(524, 351);
+            this.calcular_costos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.calcular_costos.Location = new System.Drawing.Point(309, 351);
             this.calcular_costos.Name = "calcular_costos";
-            this.calcular_costos.Size = new System.Drawing.Size(117, 59);
+            this.calcular_costos.Size = new System.Drawing.Size(155, 60);
             this.calcular_costos.TabIndex = 1;
             this.calcular_costos.Text = "Calcular costos";
-            this.calcular_costos.UseVisualStyleBackColor = true;
+            this.calcular_costos.UseVisualStyleBackColor = false;
             this.calcular_costos.Click += new System.EventHandler(this.calcular_costos_Click);
             // 
             // Cerrar
             // 
-            this.Cerrar.Location = new System.Drawing.Point(684, 351);
+            this.Cerrar.Location = new System.Drawing.Point(553, 351);
             this.Cerrar.Name = "Cerrar";
-            this.Cerrar.Size = new System.Drawing.Size(96, 58);
+            this.Cerrar.Size = new System.Drawing.Size(155, 60);
             this.Cerrar.TabIndex = 2;
             this.Cerrar.Text = "Cerrar";
             this.Cerrar.UseVisualStyleBackColor = true;
             this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(192, 88);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(406, 240);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox2.Location = new System.Drawing.Point(192, 29);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(406, 59);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(802, 453);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Cerrar);
             this.Controls.Add(this.calcular_costos);
             this.Controls.Add(this.Iniciar);
             this.Name = "Main";
             this.Text = "Cobertura de tablero de ajedrez";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,6 +115,8 @@ namespace WindowsFormsApp5_ESTE
         private System.Windows.Forms.Button Iniciar;
         private System.Windows.Forms.Button calcular_costos;
         private System.Windows.Forms.Button Cerrar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

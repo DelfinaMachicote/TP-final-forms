@@ -58,7 +58,9 @@ namespace WindowsFormsApp5_ESTE
             // 
             // imprimir
             // 
+            this.imprimir.BackColor = System.Drawing.SystemColors.ControlText;
             this.imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimir.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.imprimir.Location = new System.Drawing.Point(207, 58);
             this.imprimir.Multiline = true;
             this.imprimir.Name = "imprimir";
@@ -79,18 +81,23 @@ namespace WindowsFormsApp5_ESTE
             // 
             // Titulo
             // 
+            this.Titulo.BackColor = System.Drawing.SystemColors.ControlText;
+            this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titulo.Location = new System.Drawing.Point(207, 20);
+            this.Titulo.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Titulo.Location = new System.Drawing.Point(207, 21);
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
-            this.Titulo.Size = new System.Drawing.Size(382, 38);
+            this.Titulo.Size = new System.Drawing.Size(382, 31);
             this.Titulo.TabIndex = 4;
+            this.Titulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Titulo.TextChanged += new System.EventHandler(this.Titulo_TextChanged);
             // 
             // Tablero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Titulo);
             this.Controls.Add(this.Siguiente_tablero);
