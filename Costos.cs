@@ -17,6 +17,7 @@ namespace WindowsFormsApp5_ESTE
         {
             InitializeComponent();
             this.main = main;
+            textBox1.Text = "T(n)=8n^2 + 280n";
         }
 
         private void Volver_Click(object sender, EventArgs e)

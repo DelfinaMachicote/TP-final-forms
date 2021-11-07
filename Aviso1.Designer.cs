@@ -36,6 +36,7 @@ namespace WindowsFormsApp5_ESTE
             // 
             // aviso
             // 
+            this.aviso.BackColor = System.Drawing.SystemColors.ControlText;
             this.aviso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.aviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aviso.ForeColor = System.Drawing.SystemColors.Control;
@@ -71,6 +72,7 @@ namespace WindowsFormsApp5_ESTE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(482, 303);
             this.Controls.Add(this.Cerrar);
             this.Controls.Add(this.Volver);

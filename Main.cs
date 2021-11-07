@@ -16,6 +16,7 @@ namespace WindowsFormsApp5_ESTE
         {
             InitializeComponent();
             textBox2.Text = "Menú";
+            textBox1.Text = "En este programa se podran visualizar distintas combinaciones de las piezas de ajedrez en el tablero de modo que, segun su capacidad de ataque, puedan llenar el tablero.";
         }
 
         private void Iniciar_Click(object sender, EventArgs e)
