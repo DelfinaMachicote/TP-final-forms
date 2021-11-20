@@ -24,13 +24,12 @@ namespace WindowsFormsApp5_ESTE
         {
             
             int cont_tableros = 0;
-            //bool[,] matrizOriginal = random(n, 50); //Creo la matriz random
-            //bool[,] tablero = new bool[8, 8];
+            
             int cont_posiciones = 0;
 
             char[,] aux = new char[8, 8];
             
-            while (cont_tableros <= 9)
+            while (cont_tableros ==0)
             {
                 Random rnd = new Random();
 
@@ -76,15 +75,12 @@ namespace WindowsFormsApp5_ESTE
                 if (cont_posiciones > 63)
                 {
                     cont_tableros++;
-                    Imprimir(tablero);
+                    aux = tablero;
                 }
-                aux = tablero;
-
             }
             return aux;
-            
         }
-
+       
         public static void Asignar(Reina reina, Rey rey, Torre t1, Torre t2, Alfil a1, Alfil a2, Caballo c1, Caballo c2)
         {
             //pasamos todas las piezas por separado porque salta error cada vez que casteamos la clase padre
