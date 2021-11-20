@@ -20,7 +20,7 @@ namespace WindowsFormsApp5_ESTE
             Application.Run(new Main());
         }
 
-        public static char[,] Programa(Tablero ta)
+        public static char[,] Programa(Form ta)
         {
             
             int cont_tableros = 0;
@@ -117,7 +117,6 @@ namespace WindowsFormsApp5_ESTE
               
             }
         }
-
         public static int Contar(char[,] tablero)
         {
             int contador = 0;
@@ -130,21 +129,6 @@ namespace WindowsFormsApp5_ESTE
                 }
             }
             return contador;
-        }
-
-        public static string Imprimir(char[,] tablero)
-        {
-            string t = null;
-
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    t += tablero[j, i] + "   ";
-                }
-                t += "\n";
-            }
-            return t;
         }
     }
 }

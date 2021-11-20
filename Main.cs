@@ -12,19 +12,26 @@ namespace WindowsFormsApp5_ESTE
 {
     public partial class Main : Form
     {
+       
         public Main()
         {
             InitializeComponent();
             textBox2.Text = "Menú";
-            textBox1.Text = "En este programa se podran visualizar distintas combinaciones de las piezas de ajedrez en el tablero de modo que, segun su capacidad de ataque, puedan llenar el tablero.";
+            textBox1.Text = "Elija cuantos tableros desea imprimir";
+           
         }
-
+        public int returnCant()
+        {
+            int cant = (UInt16)numericUpDown1.Value;
+            return cant;
+        }
         private void Iniciar_Click(object sender, EventArgs e)
         {
             Tablero tablero = new Tablero(this);
             tablero.Show();
             this.Hide();
-
+            //prueba p = new prueba(this);
+           //p.Show();
         }
 
         private void calcular_costos_Click(object sender, EventArgs e)
@@ -47,6 +54,11 @@ namespace WindowsFormsApp5_ESTE
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -31,7 +31,6 @@ namespace WindowsFormsApp5_ESTE
         {
             this.Volver = new System.Windows.Forms.Button();
             this.Cerrar = new System.Windows.Forms.Button();
-            this.imprimir = new System.Windows.Forms.TextBox();
             this.Siguiente_tablero = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.TextBox();
             this.tab_imprimir = new System.Windows.Forms.Panel();
@@ -57,19 +56,6 @@ namespace WindowsFormsApp5_ESTE
             this.Cerrar.UseVisualStyleBackColor = true;
             this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
-            // imprimir
-            // 
-            this.imprimir.BackColor = System.Drawing.SystemColors.ControlText;
-            this.imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imprimir.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.imprimir.Location = new System.Drawing.Point(440, 39);
-            this.imprimir.Multiline = true;
-            this.imprimir.Name = "imprimir";
-            this.imprimir.ReadOnly = true;
-            this.imprimir.Size = new System.Drawing.Size(382, 301);
-            this.imprimir.TabIndex = 2;
-            this.imprimir.TextChanged += new System.EventHandler(this.imprimir_TextChanged);
-            // 
             // Siguiente_tablero
             // 
             this.Siguiente_tablero.Location = new System.Drawing.Point(53, 376);
@@ -86,19 +72,19 @@ namespace WindowsFormsApp5_ESTE
             this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titulo.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Titulo.Location = new System.Drawing.Point(207, 21);
+            this.Titulo.Location = new System.Drawing.Point(218, 2);
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
-            this.Titulo.Size = new System.Drawing.Size(382, 31);
+            this.Titulo.Size = new System.Drawing.Size(348, 31);
             this.Titulo.TabIndex = 4;
             this.Titulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Titulo.TextChanged += new System.EventHandler(this.Titulo_TextChanged);
             // 
             // tab_imprimir
             // 
-            this.tab_imprimir.Location = new System.Drawing.Point(42, 29);
+            this.tab_imprimir.Location = new System.Drawing.Point(208, 39);
             this.tab_imprimir.Name = "tab_imprimir";
-            this.tab_imprimir.Size = new System.Drawing.Size(373, 330);
+            this.tab_imprimir.Size = new System.Drawing.Size(367, 315);
             this.tab_imprimir.TabIndex = 5;
             this.tab_imprimir.Paint += new System.Windows.Forms.PaintEventHandler(this.tab_imprimir_Paint);
             // 
@@ -111,7 +97,6 @@ namespace WindowsFormsApp5_ESTE
             this.Controls.Add(this.tab_imprimir);
             this.Controls.Add(this.Titulo);
             this.Controls.Add(this.Siguiente_tablero);
-            this.Controls.Add(this.imprimir);
             this.Controls.Add(this.Cerrar);
             this.Controls.Add(this.Volver);
             this.Name = "Tablero";
@@ -125,7 +110,6 @@ namespace WindowsFormsApp5_ESTE
 
         private System.Windows.Forms.Button Volver;
         private System.Windows.Forms.Button Cerrar;
-        private System.Windows.Forms.TextBox imprimir;
         private System.Windows.Forms.Button Siguiente_tablero;
         private System.Windows.Forms.TextBox Titulo;
         private System.Windows.Forms.Panel tab_imprimir;
