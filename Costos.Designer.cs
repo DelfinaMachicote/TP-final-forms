@@ -38,7 +38,7 @@ namespace WindowsFormsApp5_ESTE
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(290, 187);
+            this.Volver.Location = new System.Drawing.Point(598, 487);
             this.Volver.Name = "Volver";
             this.Volver.Size = new System.Drawing.Size(105, 39);
             this.Volver.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace WindowsFormsApp5_ESTE
             // 
             // Cerrar
             // 
-            this.Cerrar.Location = new System.Drawing.Point(111, 187);
+            this.Cerrar.Location = new System.Drawing.Point(307, 487);
             this.Cerrar.Name = "Cerrar";
             this.Cerrar.Size = new System.Drawing.Size(105, 39);
             this.Cerrar.TabIndex = 1;
@@ -61,13 +61,13 @@ namespace WindowsFormsApp5_ESTE
             this.textBox1.BackColor = System.Drawing.SystemColors.ControlText;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(123, 50);
+            this.textBox1.Location = new System.Drawing.Point(49, 40);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(259, 83);
+            this.textBox1.Size = new System.Drawing.Size(910, 416);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -83,7 +83,7 @@ namespace WindowsFormsApp5_ESTE
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(512, 259);
+            this.ClientSize = new System.Drawing.Size(1017, 569);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Cerrar);
             this.Controls.Add(this.Volver);
