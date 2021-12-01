@@ -107,10 +107,17 @@ namespace WindowsFormsApp5_ESTE
 
                 a1.f = reina.f;//hago que los alfiles esten en la columna que la reina para que no se superponga ninguna de las diagonales
                 a1.c = rnd.Next(1, 6);
-
-                a2.f = reina.f;
-                a2.c = rnd.Next(1, 6);
-
+                //condicion para que uno este en uno blanco y otro en negro
+                if (a1.c == 2 || a1.c == 4 || a1.c == 6 || a1.c == 8)
+                {
+                    a2.f = reina.f;
+                    a2.c = rnd.Next(0, 3)*2+1;
+                }
+                else
+                {
+                    a2.f = reina.f;
+                    a2.c = rnd.Next(0, 4) * 2;
+                }
                 rey.f = rnd.Next(1, 6);
                 rey.c = rnd.Next(1, 6);
 
