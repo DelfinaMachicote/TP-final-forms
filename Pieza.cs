@@ -8,7 +8,7 @@ namespace WindowsFormsApp5_ESTE
 {
     class Pieza
     {
-        public int x, y;
-        public Pieza() { int x; int y; }
+        public int f, c;
+        public Pieza() { int f; int c; }
     }
 }

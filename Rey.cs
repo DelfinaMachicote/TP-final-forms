@@ -10,30 +10,30 @@ namespace WindowsFormsApp5_ESTE
     {
         public Rey(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this.f = x;
+            this.c = y;
         }
 
         public void Mover(char[,] tablero)
         {
-            tablero[x, y] = 'R';
-            if (y + 1 < 8)
-                tablero[x, y + 1] = '1';//muevo hacia arriba
-            if (x + 1 < 8)
-                tablero[x + 1, y] = '1';//muevo hacia la derecha
-            if (y - 1 >= 1)
-                tablero[x, y - 1] = '1';//muevo hacia abajo
-            if (x - 1 >= 1)
-                tablero[x - 1, y] = '1';//muevo hacia la izquierda
+            tablero[f, c] = 'R';
+            if (f + 1 < 8)
+                tablero[f+1, c] = '1';//muevo hacia arriba
+            if (c + 1 < 8)
+                tablero[f , c+1] = '1';//muevo hacia la derecha
+            if (f - 1 >= 1)
+                tablero[f-1, c] = '1';//muevo hacia abajo
+            if (c - 1 >= 1)
+                tablero[f, c-1] = '1';//muevo hacia la izquierda
 
-            if (y + 1 < 8 && x + 1 < 8)
-                tablero[x + 1, y + 1] = '1';
-            if (y + 1 < 8 && x - 1 >= 0)
-                tablero[x - 1, y + 1] = '1';
-            if (y - 1 >= 0 && x + 1 < 8)
-                tablero[x + 1, y - 1] = '1';
-            if (y - 1 >= 0 && x - 1 >= 0)
-                tablero[x - 1, y - 1] = '1';
+            if (f + 1 < 8 && c + 1 < 8)//arriba a la derecha
+                tablero[f + 1, c + 1] = '1';
+            if (c + 1 < 8 && f - 1 >= 0)//abajo a la derecha
+                tablero[f - 1, c + 1] = '1';
+            if (c - 1 >= 0 && f + 1 < 8)//arriba a la izquierda
+                tablero[f + 1, c - 1] = '1';
+            if (c - 1 >= 0 && f - 1 >= 0)//abajo a la izquierda
+                tablero[f - 1, c - 1] = '1';
         }
     }
 }

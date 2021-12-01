@@ -10,71 +10,71 @@ namespace WindowsFormsApp5_ESTE
     {
         void Posiciones()//restricciones para colocar la reina en el tablero: cuadrado [3X6]
         {
-            if (x > 5) x = 5;
+           /* if (x > 5) x = 5;
             if (x < 2) x = 2;
             if (y > 5) y = 5;
-            if (y < 2) y = 2;
+            if (y < 2) y = 2;*/
         }
         public Caballo(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this.f = x;
+            this.c = y;
             Posiciones();
         }
         public void Mover(char[,] tablero)
         {
-            tablero[x, y] = 'C';
+            tablero[f, c] = 'C';
 
-            if ((x + 1 < 8) && (y + 2 < 8))
+            if ((c + 1 < 8) && (f + 2 < 8))
             {
-                if (tablero[x + 1, y + 2] == '0')
-                    tablero[x + 1, y + 2] = '1';//arriba a la derecha
+                if (tablero[f + 2, c + 1] == '0')
+                    tablero[f + 2, c + 1] = '1';// arriba y a la derecha
             }
 
 
-            if ((x + 1 < 8) && (y - 2 >= 0))
+            if ((f + 2 < 8) && (c - 1 >= 0))
             {
-                if (tablero[x + 1, y - 2] == '0')
-                    tablero[x + 1, y - 2] = '1';//arriba a la izquierda
+                if (tablero[f+2, c-1] == '0')
+                    tablero[f + 2, c - 1] = '1';// arriba y a la izquierda
             }
 
 
-            if (x + 2 < 8 && y + 1 < 8)
+            if (c + 2 < 8 && f+ 1 < 8)
             {
-                if (tablero[x + 2, y + 1] == '0')
-                    tablero[x + 2, y + 1] = '1';//a la derecha arriba
+                if (tablero[f+1, c+2] == '0')
+                    tablero[f + 1, c + 2] = '1';//a la derecha y arriba
             }
 
-            if ((x - 2 >= 0) && y + 1 < 8)
+            if ((c+2 <8) && f- 1 >=0)
             {
-                if (tablero[x - 2, y + 1] == '0')
-                    tablero[x - 2, y + 1] = '1';//a la derecha abajo
+                if (tablero[f-1, c+2] == '0')
+                    tablero[f - 1, c + 2] = '1';//a la derecha abajo
             }
-            if (x + 2 < 8 && y - 1 >= 0)
+            if (f+1 < 8 && c-2 >= 0)
             {
-                if (tablero[x + 2, y - 1] == '0')
-                    tablero[x + 2, y - 1] = '1';//a la izquierda arriba
-            }
-
-
-            if (x - 2 >= 0 && y - 1 >= 0)
-            {
-                if (tablero[x - 2, y - 1] == '0')
-                    tablero[x - 2, y - 1] = '1';//a la izquierda abajo
+                if (tablero[f+1, c-2] == '0')
+                    tablero[f + 1, c - 2] = '1';//a la izquierda arriba
             }
 
 
-            if (x - 1 >= 0 && y + 2 < 8)
+            if (c - 2 >= 0 && f - 1 >= 0)
             {
-                if (tablero[x - 1, y + 2] == '0')
-                    tablero[x - 1, y + 2] = '1';//abajo a la derecha
+                if (tablero[f - 1, c - 2] == '0')
+                    tablero[f - 1, c - 2] = '1';//a la izquierda abajo
             }
 
 
-            if (x - 1 >= 0 && y - 2 >= 0)
+            if (f-2 >= 0 && c + 1< 8)
             {
-                if (tablero[x - 1, y - 2] == '0')
-                    tablero[x - 1, y - 2] = '1';//abajo a la izquierda
+                if (tablero[f - 2, c + 1] == '0')
+                    tablero[f - 2, c + 1] = '1';//abajo a la derecha
+            }
+
+
+            if (c - 1 >= 0 && f - 2 >= 0)
+            {
+                if (tablero[f - 2, c - 1] == '0')
+                    tablero[f - 2, c - 1] = '1';//abajo a la izquierda
             }
 
         }

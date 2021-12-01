@@ -10,35 +10,36 @@ namespace WindowsFormsApp5_ESTE
     {
         public Torre(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this.f = x;
+            this.c = y;
         }
         public void Mover(char[,] tablero)
         {
-            for (int i = x; i < 8; i++)//muevo hacia arriba
+            for (int i = c; i < 8; i++)//muevo hacia arriba
             {
-                if (tablero[i, y] != 'A' && tablero[i, y] != 'R' && tablero[i, y] != 'C' && tablero[i, y] != 'T')
+
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T')
                 {
-                    tablero[i, y] = '1';
+                    tablero[i, c] = '1';
                 }
 
             }
-            for (int i = x; i >= 0; i--)//muevo hacia abajo
+            for (int i = c; i >= 0; i--)//muevo hacia abajo
             {
-                if (tablero[i, y] == '0')
-                    tablero[i, y] = '1';
+                if (tablero[i, c] == '0')
+                    tablero[i, c] = '1';
             }
-            for (int i = y; i < 8; i++)//muevo a la derecha
+            for (int i = c; i < 8; i++)//muevo a la derecha
             {
-                if (tablero[x, i] == '0')
-                    tablero[x, i] = '1';
+                if (tablero[f, i] == '0')
+                    tablero[f, i] = '1';
             }
-            for (int i = y; i >= 0; i--)//muevo a la izquierda
+            for (int i = c; i >= 0; i--)//muevo a la izquierda
             {
-                if (tablero[x, i] == '0')
-                    tablero[x, i] = '1';
+                if (tablero[f, i] == '0')
+                    tablero[f, i] = '1';
             }
-            tablero[x, y] = 'T';
+            tablero[f, c] = 'T';
         }
     }
 }

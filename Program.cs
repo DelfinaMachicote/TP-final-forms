@@ -25,7 +25,7 @@ namespace WindowsFormsApp5_ESTE
             
             int cont_tableros = 0;
             
-            int cont_posiciones = 0;
+            int cont_posiciones;
 
             char[,] aux = new char[8, 8];
             
@@ -55,7 +55,7 @@ namespace WindowsFormsApp5_ESTE
                 }
 
                 //me aseguro de que se cumplan todas las restricciones
-                Asignar(reina, rey, torre1, torre2, alfil1, alfil2, caballo1, caballo2);
+                Asignar(reina, rey, torre1, torre2, alfil1, alfil2, caballo1, caballo2,tablero);
 
                 //muevo cada pieza
                 reina.Mover(tablero);
@@ -81,41 +81,47 @@ namespace WindowsFormsApp5_ESTE
             return aux;
         }
        
-        public static void Asignar(Reina reina, Rey rey, Torre t1, Torre t2, Alfil a1, Alfil a2, Caballo c1, Caballo c2)
+        public static void Asignar(Reina reina, Rey rey, Torre t1, Torre t2, Alfil a1, Alfil a2, Caballo c1, Caballo c2, char[,] tablero)
         {
             //pasamos todas las piezas por separado porque salta error cada vez que casteamos la clase padre
 
 
             Random rnd = new Random();
 
-            t1.x = 0;//la torre 1 estara en la columna 1
-            t1.y = 0;
-            t2.x = 7;//la torre 2 estara en la columna 8
-            t2.y = 7;
+            t1.f = 0;//la torre 1 estara en la fila 1
+            t1.c = 0;
+            t2.f = 7;//la torre 2 estara en la fila 8
+            t2.c = 7;
 
           
-            while ((reina.x == c2.x && reina.y == c2.y) || (c2.x == a2.x && c2.y == a2.y) || (c2.x == c1.x && c2.y == c1.y) || (a1.x == c2.x && a1.y == c2.y) || (a2.x == c2.x && a2.y == c2.y) || (reina.x == c1.x && reina.y == c1.y) || (c1.x == a2.x && c1.y == a2.y) || (a1.x == c1.x && a1.y == c1.y) || (c1.x == c2.x && c1.y == c2.y) || (a2.x == c1.x && a2.y == c1.y) || (a2.x == rey.x && a2.y == rey.y) || (reina.x == a2.x && reina.y == a2.y) || (a1.x == a2.x && a1.y == a2.y) || (a2.x == c1.x && a2.y == c1.y) || (a2.x == c2.x && a2.y == c2.y) || (a1.x == rey.x && a1.y == rey.y) || (reina.x == a1.x && reina.y == a1.y) || (a1.x == a2.x && a1.y == a2.y) || (a1.x == c1.x && a1.y == c1.y) || (a1.x == c2.x && a1.y == c2.y) || (reina.x == rey.x && reina.y == rey.y) || (rey.x == a1.x && rey.y == a1.y) || (rey.x == a2.x && rey.y == a2.y) || (reina.x == rey.x && reina.y == rey.y) || (reina.x == a1.x && reina.y == a1.y) || (reina.x == a2.x && reina.y == a2.y) || (reina.x == c2.x && reina.y == c2.y) || (reina.x == c1.x && reina.y == c1.y))
+            while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c)||(rey.f==c1.f&&rey.c==c1.c)|| (rey.f == c2.f && rey.c == c2.c))
             {
-                reina.x = rnd.Next(2, 5);
-                reina.y = rnd.Next(2, 5);
+                reina.f = rnd.Next(2, 5);
+                reina.c = rnd.Next(2, 5);
 
-                c1.x = rnd.Next(2, 5);
-                c1.y = rnd.Next(2, 5);
+                c1.f = rnd.Next(2, 5);
+                c1.c = rnd.Next(2, 5);
 
-                c2.x = rnd.Next(2, 5);
-                c2.y = rnd.Next(2, 5);
+                c2.f = rnd.Next(2, 5);
+                c2.c = rnd.Next(2, 5);
 
-                a1.x = reina.x;//hago que los alfiles esten en la columna que la reina para que no se superponga ninguna de las diagonales
-                a1.y = rnd.Next(1, 6);
+                a1.f = reina.f;//hago que los alfiles esten en la columna que la reina para que no se superponga ninguna de las diagonales
+                a1.c = rnd.Next(1, 6);
 
-                a2.x = reina.x;
-                a2.y = rnd.Next(1, 6);
+                a2.f = reina.f;
+                a2.c = rnd.Next(1, 6);
 
-                rey.x = rnd.Next(1, 6);
-                rey.y = rnd.Next(1, 6);
+                rey.f = rnd.Next(1, 6);
+                rey.c = rnd.Next(1, 6);
 
               
             }
+           
+           
+
+
+            
+
         }
         public static int Contar(char[,] tablero)
         {

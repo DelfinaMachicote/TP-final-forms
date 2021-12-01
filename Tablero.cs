@@ -88,6 +88,10 @@ namespace WindowsFormsApp5_ESTE
                     {
                         btn.Text = "1";
                     }
+                    if (tab[f, c] == '2')
+                    {
+                        btn.Text = "2";
+                    }
                     if (tab[f, c] == 'D')
                     {
                         btn.Text = "D";

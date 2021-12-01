@@ -8,63 +8,61 @@ namespace WindowsFormsApp5_ESTE
 {
     class Alfil : Pieza
     {
-        public Alfil(int x, int y)
+        public Alfil(int f, int c)
         {
-            this.x = x;
-            this.y = y;
+            this.f = f;
+            this.c = c;
         }
         public void Mover(char[,] tablero)
         {
             for (int i = 0; i < 8; i++)//diagonal arriba a la derecha
             {
-                if (x + i < 8 && y + i < 8)
+                if (f + i < 8 && c + i < 8)
                 {
-                    if (tablero[x + i, y + i] == '0')
+                    if (tablero[f + i, c + i] == '0')
                     {
 
-                        tablero[x + i, y + i] = '1';
+                        tablero[f + i, c + i] = '1';
                     }
                 }
-
-
 
             }
             for (int i = 0; i < 8; i++)//diagonal abajo a la derecha  
             {
-                if (x - i >= 0 && y + i < 8)
+                if (c - i >= 0 && f + i < 8)
                 {
-                    if (tablero[x - i, y + i] == '0')
+                    if (tablero[f + i, c - i] == '0')
                     {
 
-                        tablero[x - i, y + i] = '1';
+                        tablero[f + i, c - i] = '1';
                     }
                 }
             }
             for (int i = 0; i < 8; i++)//diagonal arriba a la izquierda
             {
-                if (x + i < 8 && y - i >= 0)
+                if (c + i < 8 && f - i >= 0)
                 {
-                    if (tablero[x + i, y - i] == '0')
+                    if (tablero[f - i, c + i] == '0')
                     {
 
-                        tablero[x + i, y - i] = '1';
+                        tablero[f - i, c + i] = '1';
                     }
                 }
 
             }
             for (int i = 0; i < 8; i++)//diagonal abajo a la izquierda
             {
-                if (x - i >= 0 && y - i >= 0)
+                if (f - i >= 0 && c - i >= 0)
                 {
-                    if (tablero[x - i, y - i] == '0')
+                    if (tablero[f - i, c - i] == '0')
                     {
 
-                        tablero[x - i, y - i] = '1';
+                        tablero[f - i, c - i] = '1';
                     }
                 }
 
             }
-            tablero[x, y] = 'A';
+            tablero[f, c] = 'A';
         }
     }
 }

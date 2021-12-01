@@ -10,95 +10,228 @@ namespace WindowsFormsApp5_ESTE
     {
         void Posiciones()//restricciones para colocar la reina en el tablero: cuadrado [3X6]
         {
-            if (x > 5) x = 5;
-            if (x < 2) x = 2;
-            if (y > 5) y = 5;
-            if (y < 2) y = 2;
+            //if (x > 5) x = 5;
+            //if (x < 2) x = 2;
+            //if (y > 5) y = 5;
+           // if (y < 2) y = 2;
         }
         public Reina(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this.f = x;
+            this.c = y;
             //  Posiciones();//achico el tablero
         }
 
         public void Mover(char[,] tablero)
         {
+            int aux=8;
+            
 
-            for (int i = x; i < 8; i++)//muevo hacia arriba
+
+
+
+            for (int i = f; i < 8; i++)//muevo hacia abajo
             {
-                if (tablero[i, y] != 'A' && tablero[i, y] != 'R' && tablero[i, y] != 'C' && tablero[i, y] != 'T')
+        
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T')
                 {
-                    tablero[i, y] = '1';
+                    tablero[i, c] = '1';  
+                }
+                else
+                {
+                    aux = i;
+                    break;
+                }    
+            }
+            for(int i = aux; i < 8; i++)
+            {
+                if(tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T'&& tablero[i, c] != '1')
+                tablero[i, c] = '2';
+            }
+            aux = -1;
+
+
+            for (int i = f; i >= 0; i--)//muevo hacia arriba
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T')
+                {
+                    tablero[i, c] = '1';
+                }
+                else
+                {
+                    aux = i;
+                    break;
+                }
+            }
+            for (int i = aux; i >=0; i--)
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i, c] != '1')
+                    tablero[i, c] = '2';
+            }
+            aux = 8;
+
+
+            for (int i = c; i < 8; i++)//muevo a la derecha
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T')
+                {
+                    tablero[f, i] = '1';
+                }
+                else
+                {
+                    aux = i;
+                    break;
+                }
+            }
+            for (int i = aux; i < 8; i++)
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i, c] != '1')
+                    tablero[i, c] = '2';
+            }
+            aux = 0;
+
+
+
+            for (int i = c; i >= 0; i--)//muevo a la izquierda
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T')
+                {
+                    tablero[f, i] = '1';
+                }
+                else
+                {
+                    aux = i;
+                    break;
+                }  
+            }
+            for (int i = aux; i >= 0; i--)
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i, c] != '1')
+                    tablero[i, c] = '2';
+            }
+
+            aux = 8;
+
+
+
+            for (int i = 0; i < 8; i++)//diagonal abajo a la derecha
+            {
+                if (f + i < 8 && c + i < 8)
+                {
+                    if (tablero[f + i, c + i] != 'A' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T')
+                    {
+                        tablero[f + i, c + i] = '1';
+                    }
+                    else
+                    {
+                        aux = i;
+                        break;
+                    }
                 }
 
             }
-            for (int i = x; i >= 0; i--)//muevo hacia abajo
+            for(int i = aux; i < 8; i++)
             {
-                if (tablero[i, y] == '0')
-                    tablero[i, y] = '1';
+                if (f + i < 8 && c + i < 8)
+                {
+                    if (tablero[f + i, c + i] != 'A'&& tablero[f + i, c + i] != 'R'&& tablero[f + i, c + i] != 'C'&& tablero[f + i, c + i] != 'T'&&tablero[f + i, c + i] != '1')
+                    {
+                        tablero[f + i, c + i] = '2';
+                    }
+                }
             }
-            for (int i = y; i < 8; i++)//muevo a la derecha
+            aux = 8;
+
+
+
+            for (int i = 0; i < 8; i++)//diagonal abajo a la izquierda 
             {
-                if (tablero[x, i] == '0')
-                    tablero[x, i] = '1';
+                if (c - i >= 0 && f + i < 8)
+                {
+                    if (tablero[f + i, c - i] != 'A'&& tablero[f + i, c - i] != 'R'&& tablero[f + i, c - i] != 'C'&& tablero[f + i, c - i] != 'T')
+                    {
+                        tablero[f + i, c - i] = '1';
+                    }
+                    else
+                    {
+                        aux = i;
+                        break;
+                    }
+                }
             }
-            for (int i = y; i >= 0; i--)//muevo a la izquierda
+            for(int i = aux; i < 8; i++)
             {
-                if (tablero[x, i] == '0')
-                    tablero[x, i] = '1';
+                if (f + i < 8 && c - i >= 0) {
+                    if (tablero[f + i, c - i] != 'A' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T' && tablero[f + i, c - i] != '1')
+                    {
+                        tablero[f + i, c - i] = '2';
+                    }
+                }
+                
             }
+
+            aux = 8;
 
             for (int i = 0; i < 8; i++)//diagonal arriba a la derecha
             {
-                if (x + i < 8 && y + i < 8)
+                if (c + i < 8 && f - i >= 0)
                 {
-                    if (tablero[x + i, y + i] == '0')
+                    if (tablero[f - i, c + i] != 'A'&& tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T')
                     {
 
-                        tablero[x + i, y + i] = '1';
+                        tablero[f - i, c + i] = '1';
+                    }
+                    else
+                    {
+                        aux = i;
+                        break;
                     }
                 }
-
-
-
             }
-            for (int i = 0; i < 8; i++)//diagonal abajo a la derecha  
+            for(int i = aux; i < 8; i++)
             {
-                if (x - i >= 0 && y + i < 8)
+                if (f - i >= 0 && c + i < 8)
                 {
-                    if (tablero[x - i, y + i] == '0')
+                    if (tablero[f - i, c + i] != 'A' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T' && tablero[f - i, c + i] != '1')
                     {
 
-                        tablero[x - i, y + i] = '1';
+                        tablero[f - i, c + i] = '2';
                     }
                 }
+                
             }
+
+
+            aux = 8;
+
+
             for (int i = 0; i < 8; i++)//diagonal arriba a la izquierda
             {
-                if (x + i < 8 && y - i >= 0)
+                if (f - i >= 0 && c - i >= 0)
                 {
-                    if (tablero[x + i, y - i] == '0')
+                    if (tablero[f - i, c - i] != 'A'&& tablero[f - i, c - i] != 'R'&&tablero[f - i, c - i] != 'C'&& tablero[f - i, c - i] != 'T')
                     {
 
-                        tablero[x + i, y - i] = '1';
+                        tablero[f - i, c - i] = '1';
+                    }
+                    else
+                    {
+                        aux = i;
+                        break;
                     }
                 }
-
             }
-            for (int i = 0; i < 8; i++)//diagonal abajo a la izquierda
+            for (int i = aux; i < 8; i++)
             {
-                if (x - i >= 0 && y - i >= 0)
-                {
-                    if (tablero[x - i, y - i] == '0')
+                if (f - i >= 0 && c - i >= 0) {
+                    if (tablero[f - i, c - i] != 'A' && tablero[f - i, c - i] != 'R' && tablero[f - i, c - i] != 'C' && tablero[f - i, c - i] != 'T' && tablero[f - i, c - i] != '1')
                     {
-
-                        tablero[x - i, y - i] = '1';
+                        tablero[f - i, c - i] = '2';
                     }
                 }
-
+                
             }
-            tablero[x, y] = 'D';
+            tablero[f, c] = 'D';
         }
     }
 }
