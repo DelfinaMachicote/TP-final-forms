@@ -58,14 +58,18 @@ namespace WindowsFormsApp5_ESTE
                 Asignar(reina, rey, torre1, torre2, alfil1, alfil2, caballo1, caballo2, tablero);
 
                 //muevo cada pieza
-                reina.Mover(tablero);
-                rey.Mover(tablero);
-                alfil1.Mover(tablero);
-                alfil2.Mover(tablero);
                 torre1.Mover(tablero);
                 torre2.Mover(tablero);
+                rey.Mover(tablero);
                 caballo1.Mover(tablero);
                 caballo2.Mover(tablero);
+                reina.Mover(tablero);
+                alfil1.Mover(tablero);
+                alfil2.Mover(tablero);
+              //  reina.MoverHorizontal(tablero);
+
+
+
 
 
                 //cuento los casilleros del tablero que se llenaron
@@ -96,7 +100,10 @@ namespace WindowsFormsApp5_ESTE
             while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c))
             {
                 reina.f = rnd.Next(1, 6);
-                reina.c = rnd.Next(1,6);
+                reina.c = rnd.Next(1, 6);
+
+                rey.f = rnd.Next(1, 6);
+                rey.c = rnd.Next(1, 6);
 
                 c1.f = rnd.Next(2, 5);
                 c1.c = rnd.Next(2, 5);
@@ -110,15 +117,12 @@ namespace WindowsFormsApp5_ESTE
                 a2.f = reina.f;
                 a2.c = rnd.Next(1, 6);
 
-                rey.f = rnd.Next(1, 6);
-                rey.c = rnd.Next(1, 6);
-
                 //condicion para que un alfil este en un color y otro alfil este en el otro
                 if ((a2.c % 2 == 0 && a1.c % 2 == 0) || (a2.c % 2 == 1 && a1.c % 2 == 1))
                 {
                     if (a2.c + 1 < 7)
                     {
-                        a2.c += 1;
+                       a2.c += 1;
                     }
                     else
                     {

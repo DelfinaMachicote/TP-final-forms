@@ -8,7 +8,7 @@ namespace WindowsFormsApp5_ESTE
 {
     class Reina : Pieza
     {
-       
+
         public Reina(int x, int y)
         {
             this.f = x;
@@ -18,29 +18,29 @@ namespace WindowsFormsApp5_ESTE
 
         public void Mover(char[,] tablero)
         {
-            int aux=8;
-            
+            int aux = 8;
+
 
 
 
 
             for (int i = f; i < 8; i++)//muevo hacia abajo
             {
-        
+
                 if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T')
                 {
-                    tablero[i, c] = '1';  
+                    tablero[i, c] = '1';
                 }
                 else
                 {
                     aux = i;
                     break;
-                }    
+                }
             }
-            for(int i = aux; i < 8; i++)
+            for (int i = aux; i < 8; i++)
             {
-                if(tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T'&& tablero[i, c] != '1')
-                tablero[i, c] = '2';
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i, c] != '1')
+                    tablero[i, c] = '2';
             }
             aux = -1;
 
@@ -57,13 +57,12 @@ namespace WindowsFormsApp5_ESTE
                     break;
                 }
             }
-            for (int i = aux; i >=0; i--)
+            for (int i = aux; i >= 0; i--)
             {
                 if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i, c] != '1')
                     tablero[i, c] = '2';
             }
             aux = 8;
-
 
             for (int i = c; i < 8; i++)//muevo a la derecha
             {
@@ -96,7 +95,7 @@ namespace WindowsFormsApp5_ESTE
                 {
                     aux = i;
                     break;
-                }  
+                }
             }
             for (int i = aux; i >= 0; i--)
             {
@@ -124,11 +123,11 @@ namespace WindowsFormsApp5_ESTE
                 }
 
             }
-            for(int i = aux; i < 8; i++)
+            for (int i = aux; i < 8; i++)
             {
                 if (f + i < 8 && c + i < 8)
                 {
-                    if (tablero[f + i, c + i] != 'A'&& tablero[f + i, c + i] != 'R'&& tablero[f + i, c + i] != 'C'&& tablero[f + i, c + i] != 'T'&&tablero[f + i, c + i] != '1')
+                    if (tablero[f + i, c + i] != 'A' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T' && tablero[f + i, c + i] != '1')
                     {
                         tablero[f + i, c + i] = '2';
                     }
@@ -142,7 +141,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (c - i >= 0 && f + i < 8)
                 {
-                    if (tablero[f + i, c - i] != 'A'&& tablero[f + i, c - i] != 'R'&& tablero[f + i, c - i] != 'C'&& tablero[f + i, c - i] != 'T')
+                    if (tablero[f + i, c - i] != 'A' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T')
                     {
                         tablero[f + i, c - i] = '1';
                     }
@@ -153,15 +152,16 @@ namespace WindowsFormsApp5_ESTE
                     }
                 }
             }
-            for(int i = aux; i < 8; i++)
+            for (int i = aux; i < 8; i++)
             {
-                if (f + i < 8 && c - i >= 0) {
+                if (f + i < 8 && c - i >= 0)
+                {
                     if (tablero[f + i, c - i] != 'A' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T' && tablero[f + i, c - i] != '1')
                     {
                         tablero[f + i, c - i] = '2';
                     }
                 }
-                
+
             }
 
             aux = 8;
@@ -170,7 +170,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (c + i < 8 && f - i >= 0)
                 {
-                    if (tablero[f - i, c + i] != 'A'&& tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T')
+                    if (tablero[f - i, c + i] != 'A' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T')
                     {
 
                         tablero[f - i, c + i] = '1';
@@ -182,7 +182,7 @@ namespace WindowsFormsApp5_ESTE
                     }
                 }
             }
-            for(int i = aux; i < 8; i++)
+            for (int i = aux; i < 8; i++)
             {
                 if (f - i >= 0 && c + i < 8)
                 {
@@ -192,7 +192,7 @@ namespace WindowsFormsApp5_ESTE
                         tablero[f - i, c + i] = '2';
                     }
                 }
-                
+
             }
 
 
@@ -203,7 +203,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (f - i >= 0 && c - i >= 0)
                 {
-                    if (tablero[f - i, c - i] != 'A'&& tablero[f - i, c - i] != 'R'&&tablero[f - i, c - i] != 'C'&& tablero[f - i, c - i] != 'T')
+                    if (tablero[f - i, c - i] != 'A' && tablero[f - i, c - i] != 'R' && tablero[f - i, c - i] != 'C' && tablero[f - i, c - i] != 'T')
                     {
 
                         tablero[f - i, c - i] = '1';
@@ -217,15 +217,64 @@ namespace WindowsFormsApp5_ESTE
             }
             for (int i = aux; i < 8; i++)
             {
-                if (f - i >= 0 && c - i >= 0) {
+                if (f - i >= 0 && c - i >= 0)
+                {
                     if (tablero[f - i, c - i] != 'A' && tablero[f - i, c - i] != 'R' && tablero[f - i, c - i] != 'C' && tablero[f - i, c - i] != 'T' && tablero[f - i, c - i] != '1')
                     {
                         tablero[f - i, c - i] = '2';
                     }
                 }
-                
+
             }
             tablero[f, c] = 'D';
         }
+      /*  
+        public void MoverHorizontal(char[,] tablero)
+        {
+            int aux = 8;
+
+            for (int i = c; i < 8; i++)//muevo a la derecha
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T'&& tablero[i,c] != 'D')
+                {
+                    tablero[f, i] = '1';
+                }
+                else
+                {
+                    aux = i;
+                    break;
+                }
+            }
+            for (int i = aux; i < 8; i++)
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i,c] != 'D' && tablero[i, c] != '1')
+                    tablero[i, c] = '2';
+            }
+            aux = 0;
+
+
+
+            for (int i = c; i >= 0; i--)//muevo a la izquierda
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i, c] != 'D')
+                {
+                    tablero[f, i] = '1';
+                }
+                else
+                {
+                    aux = i;
+                    break;
+                }
+            }
+            for (int i = aux; i >= 0; i--)
+            {
+                if (tablero[i, c] != 'A' && tablero[i, c] != 'R' && tablero[i, c] != 'C' && tablero[i, c] != 'T' && tablero[i, c] != 'D' && tablero[i, c] != '1')
+                    tablero[i, c] = '2';
+            }
+
+            aux = 8;
+        }
+   
+    */
     }
 }
