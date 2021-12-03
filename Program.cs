@@ -59,14 +59,23 @@ namespace WindowsFormsApp5_ESTE
 
                 //muevo cada pieza
                 reina.Mover(tablero);
-                rey.Mover(tablero);
-                alfil1.Mover(tablero);
-                alfil2.Mover(tablero);
-                torre1.Mover(tablero);
-                torre2.Mover(tablero);
-                caballo1.Mover(tablero);
-                caballo2.Mover(tablero);
 
+                rey.Mover(tablero);
+
+                alfil1.Mover(tablero);
+
+                alfil2.Mover(tablero);
+                tablero[alfil2.f, alfil2.c] = 'a';
+
+                torre1.Mover(tablero);
+
+                torre2.Mover(tablero);
+                tablero[torre2.f, torre2.c] = 't';
+
+                caballo1.Mover(tablero);
+
+                caballo2.Mover(tablero);
+                tablero[caballo2.f, caballo2.c] = 'c';
 
                 //cuento los casilleros del tablero que se llenaron
                 cont_posiciones = Contar(tablero);
@@ -156,8 +165,33 @@ namespace WindowsFormsApp5_ESTE
                     }
                     if (tab[i, j] == 'T')
                     {
-                        reina.f = i;
-                        reina.c = j;
+                        torre1.f = i;
+                        torre1.c = j;
+                    }
+                    if (tab[i, j] == 't')
+                    {
+                        torre2.f = i;
+                        torre2.c = j;
+                    }
+                    if (tab[i, j] == 'C')
+                    {
+                        caballo1.f = i;
+                        caballo1.c = j;
+                    }
+                    if (tab[i, j] == 'c')
+                    {
+                        caballo2.f = i;
+                        caballo2.c = j;
+                    }
+                    if (tab[i, j] == 'A')
+                    {
+                        alfil1.f = i;
+                        alfil1.c = j;
+                    }
+                    if (tab[i, j] == 'a')
+                    {
+                        alfil2.f = i;
+                        alfil2.c = j;
                     }
                 }
             }
@@ -166,7 +200,30 @@ namespace WindowsFormsApp5_ESTE
             switch (caso)
             {
                 case 1:
+                    torre1.f = 7;
+                    torre1.c = 0;
 
+                    torre2.f = 0;
+                    torre2.c = 7;
+
+                    reina.Mover(aux);
+
+                    rey.Mover(aux);
+
+                    alfil1.Mover(aux);
+
+                    alfil2.Mover(aux);
+                    aux[alfil2.f, alfil2.c] = 'a';
+
+                    torre1.Mover(aux);
+
+                    torre2.Mover(aux);
+                    aux[torre2.f, torre2.c] = 't';
+
+                    caballo1.Mover(aux);
+
+                    caballo2.Mover(aux);
+                    aux[caballo2.f, caballo2.c] = 'c';
                     break;
 
 
