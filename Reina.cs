@@ -8,13 +8,7 @@ namespace WindowsFormsApp5_ESTE
 {
     class Reina : Pieza
     {
-        void Posiciones()//restricciones para colocar la reina en el tablero: cuadrado [3X6]
-        {
-            //if (x > 5) x = 5;
-            //if (x < 2) x = 2;
-            //if (y > 5) y = 5;
-           // if (y < 2) y = 2;
-        }
+       
         public Reina(int x, int y)
         {
             this.f = x;

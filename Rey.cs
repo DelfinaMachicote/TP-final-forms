@@ -16,7 +16,7 @@ namespace WindowsFormsApp5_ESTE
 
         public void Mover(char[,] tablero)
         {
-            tablero[f, c] = 'R';
+            
             if (f + 1 < 8)
                 tablero[f+1, c] = '1';//muevo hacia arriba
             if (c + 1 < 8)
@@ -34,6 +34,7 @@ namespace WindowsFormsApp5_ESTE
                 tablero[f + 1, c - 1] = '1';
             if (c - 1 >= 0 && f - 1 >= 0)//abajo a la izquierda
                 tablero[f - 1, c - 1] = '1';
+            tablero[f, c] = 'R';
         }
     }
 }
