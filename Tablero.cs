@@ -100,6 +100,10 @@ namespace WindowsFormsApp5_ESTE
                     {
                         btn.Text = "A";
                     }
+                    if (tab[f, c] == 'a')
+                    {
+                        btn.Text = "A";
+                    }
                     if (tab[f, c] == 'R')
                     {
                         btn.Text = "R";
@@ -108,7 +112,15 @@ namespace WindowsFormsApp5_ESTE
                     {
                         btn.Text = "T";
                     }
+                    if (tab[f, c] == 't')
+                    {
+                        btn.Text = "T";
+                    }
                     if (tab[f, c] == 'C')
+                    {
+                        btn.Text = "C";
+                    }
+                    if (tab[f, c] == 'c')
                     {
                         btn.Text = "C";
                     }
