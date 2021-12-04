@@ -23,13 +23,13 @@ namespace WindowsFormsApp5_ESTE
         public static char[,] Programa(Form ta)
         {
 
-            int cont_tableros = 0;
+            bool check = false;
 
             int cont_posiciones;
 
             char[,] aux = new char[8, 8];
 
-            while (cont_tableros == 0)
+            while (check==false)
             {
                 Random rnd = new Random();
 
@@ -85,7 +85,7 @@ namespace WindowsFormsApp5_ESTE
                 //si el tablero esta lleno, se imprime
                 if (cont_posiciones > 63)
                 {
-                    cont_tableros++;
+                    check = true;
                     aux = tablero;
                 }
             }

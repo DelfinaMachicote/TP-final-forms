@@ -19,11 +19,12 @@ namespace WindowsFormsApp5_ESTE
         public Tablero(Main main)
         {
             InitializeComponent();
+            Titulo.Text = "Tablero " + cont;
             this.main = main;
             cont = 1;
             tab = Program.Programa(this);
             aux = tab;
-            Titulo.Text = "Tablero " + cont;
+            
 
 
 
@@ -95,11 +96,11 @@ namespace WindowsFormsApp5_ESTE
         private void Siguiente_tablero_Click(object sender, EventArgs e)
         {
             int cantidad = main.returnCant();
-            if (cont <cantidad)
+            if (cont < cantidad)
             {
                 if (cont <= 4)
                 {
-                    tab = Program.Reordenar(aux, cont);
+                    tab = Program.Reordenar(tab, cont);
                 }
                 else {
                     while (aux == tab)
@@ -109,8 +110,7 @@ namespace WindowsFormsApp5_ESTE
                     }
                     tab = aux;
                 }
-                
-                
+          
                 ++cont;
                 Titulo.Text = "Tablero " + cont;
                 tab_imprimir.Controls.Clear();

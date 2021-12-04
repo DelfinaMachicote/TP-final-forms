@@ -30,8 +30,7 @@ namespace WindowsFormsApp5_ESTE
             Tablero tablero = new Tablero(this);
             tablero.Show();
             this.Hide();
-            //prueba p = new prueba(this);
-           //p.Show();
+            
         }
 
         private void calcular_costos_Click(object sender, EventArgs e)
