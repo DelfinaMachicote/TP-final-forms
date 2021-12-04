@@ -106,8 +106,8 @@ namespace WindowsFormsApp5_ESTE
 
             while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c))
             {
-                reina.f = rnd.Next(1, 6);
-                reina.c = rnd.Next(1, 6);
+                reina.f = rnd.Next(2, 5);
+                reina.c = rnd.Next(2, 5);
 
                 rey.f = rnd.Next(1, 6);
                 rey.c = rnd.Next(1, 6);
@@ -149,6 +149,10 @@ namespace WindowsFormsApp5_ESTE
             Alfil alfil2 = new Alfil(0, 0);
             Caballo caballo1 = new Caballo(0, 0);
             Caballo caballo2 = new Caballo(0, 0);
+            char[,] aux2 = new char[8, 8];
+            char[,] aux3 = new char[8, 8];
+            char[,] aux4 = new char[8, 8];
+            char[,] aux5 = new char[8, 8];
 
 
             for (int i = 0; i < 8; i++)
@@ -195,40 +199,53 @@ namespace WindowsFormsApp5_ESTE
                         alfil2.f = i;
                         alfil2.c = j;
                     }
-                }
-            }
 
-            char[,] aux = tab;
+                    //implemento en el mismo for diferentes formas de rotar el tablero
+                    aux3[j, i] = tab[i, j];
+                    aux4[7 - i, 7 - j] = tab[i, j];
+                    aux5[7 - i, 7 - j] = aux3[i, j];
+                }
+            }//recorre el tablero y localiza cada pieza
+
+            
             switch (caso)
             {
-                case 1:
+                case 2: //muevo solo las torres
+                    
                     torre1.f = 7;
                     torre1.c = 0;
 
                     torre2.f = 0;
                     torre2.c = 7;
 
-                    reina.Mover(aux);
+                    reina.Mover(aux2);
 
-                    rey.Mover(aux);
+                    rey.Mover(aux2);
 
-                    alfil1.Mover(aux);
+                    alfil1.Mover(aux2);
 
-                    alfil2.Mover(aux);
-                    aux[alfil2.f, alfil2.c] = 'a';
+                    alfil2.Mover(aux2);
+                    aux2[alfil2.f, alfil2.c] = 'a';
 
-                    torre1.Mover(aux);
+                    torre1.Mover(aux2);
 
-                    torre2.Mover(aux);
-                    aux[torre2.f, torre2.c] = 't';
+                    torre2.Mover(aux2);
+                    aux2[torre2.f, torre2.c] = 't';
 
-                    caballo1.Mover(aux);
+                    caballo1.Mover(aux2);
 
-                    caballo2.Mover(aux);
-                    aux[caballo2.f, caballo2.c] = 'c';
-                    break;
+                    caballo2.Mover(aux2);
+                    aux2[caballo2.f, caballo2.c] = 'c';
+                    return aux2;
 
+                case 3:
+                    return aux3;
+                case 4:
 
+                    return aux4;
+                case 5:
+                    return aux5;
+                default: return tab;
                     
             }
 
@@ -238,7 +255,7 @@ namespace WindowsFormsApp5_ESTE
 
 
 
-            return aux;
+           
         }
 
         public static int Contar(char[,] tablero)

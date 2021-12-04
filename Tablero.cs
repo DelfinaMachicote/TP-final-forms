@@ -48,11 +48,20 @@ namespace WindowsFormsApp5_ESTE
             int cantidad = main.returnCant();
             if (cont <cantidad)
             {
-                while (aux == tab)
+                if (cont <= 5)
                 {
-                    aux = Program.Programa(this);
+                    tab = Program.Reordenar(tab, cont);
                 }
-                tab = aux;
+                else {
+                    while (aux == tab)
+                    {
+                        aux = Program.Programa(this);
+                        
+                    }
+                    tab = aux;
+                }
+                
+                
                 ++cont;
                 Titulo.Text = "Tablero " + cont;
                 tab_imprimir.Controls.Clear();
