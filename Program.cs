@@ -155,7 +155,7 @@ namespace WindowsFormsApp5_ESTE
             char[,] aux5 = new char[8, 8];
 
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++)//recorre el tablero y localiza cada pieza
             {
                 for (int j = 0; j < 8; j++)
                 {
@@ -205,12 +205,12 @@ namespace WindowsFormsApp5_ESTE
                     aux4[7 - i, 7 - j] = tab[i, j];
                     aux5[7 - i, 7 - j] = aux3[i, j];
                 }
-            }//recorre el tablero y localiza cada pieza
+            }
 
             
             switch (caso)
             {
-                case 2: //muevo solo las torres
+                case 1: //muevo solo las torres
                     
                     torre1.f = 7;
                     torre1.c = 0;
@@ -219,31 +219,25 @@ namespace WindowsFormsApp5_ESTE
                     torre2.c = 7;
 
                     reina.Mover(aux2);
-
                     rey.Mover(aux2);
-
                     alfil1.Mover(aux2);
-
                     alfil2.Mover(aux2);
                     aux2[alfil2.f, alfil2.c] = 'a';
-
                     torre1.Mover(aux2);
-
                     torre2.Mover(aux2);
                     aux2[torre2.f, torre2.c] = 't';
-
                     caballo1.Mover(aux2);
 
                     caballo2.Mover(aux2);
                     aux2[caballo2.f, caballo2.c] = 'c';
                     return aux2;
 
-                case 3:
+                case 2:
                     return aux3;
-                case 4:
+                case 3:
 
                     return aux4;
-                case 5:
+                case 4:
                     return aux5;
                 default: return tab;
                     
