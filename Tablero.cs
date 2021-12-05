@@ -26,59 +26,9 @@ namespace WindowsFormsApp5_ESTE
             aux = tab;
             
 
-
-
             
         }    
-       /* public void Guardar(char[,] t)
-        {
-            char[,] aux1 = new char[8, 8];
-            char[,] aux2 = new char[8, 8];
-            char[,] aux3 = new char[8, 8];
-            char[,] aux4 = new char[8, 8];
-            char[,] aux5 = new char[8, 8];
-            char[,] aux6 = new char[8, 8];
-            char[,] aux7 = new char[8, 8];
-            char[,] aux8 = new char[8, 8];
-            char[,] aux9 = new char[8, 8];
-            char[,] aux10 = new char[8, 8];
-            switch (cont)
-            {
-                case 1:
-                    aux1 = t;
-                    break;
-                case 2:
-                    aux2 = t;
-                    break;
-                case 3:
-                    aux3 = t;
-                    break;
-                case 4:
-                    aux4 = t;
-                    break;
-                case 5:
-                    aux5 = t;
-                    break;
-                case 6:
-                    aux6 = t;
-                    break;
-                case 7:
-                    aux7 = t;
-                    break;
-                case 8:
-                    aux8 = t;
-                    break;
-                case 9:
-                    aux9 = t;
-                    break;
-                case 10:
-                    aux10 = t;
-                    break;
-
-            }
-
-
-        }*/
+      
         private void Volver_Click(object sender, EventArgs e)
         {    
             main.Show();
@@ -95,12 +45,14 @@ namespace WindowsFormsApp5_ESTE
         }
         private void Siguiente_tablero_Click(object sender, EventArgs e)
         {
+            char[,] auxiliar = new char[8, 8];
+            auxiliar = tab;
             int cantidad = main.returnCant();
             if (cont < cantidad)
             {
                 if (cont <= 4)
                 {
-                    tab = Program.Reordenar(tab, cont);
+                    tab = Program.Reordenar(auxiliar, cont);
                 }
                 else {
                     while (aux == tab)
@@ -111,7 +63,7 @@ namespace WindowsFormsApp5_ESTE
                     tab = aux;
                 }
           
-                ++cont;
+                cont++;
                 Titulo.Text = "Tablero " + cont;
                 tab_imprimir.Controls.Clear();
                 tab_imprimir.Refresh();

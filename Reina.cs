@@ -20,10 +20,6 @@ namespace WindowsFormsApp5_ESTE
         {
             int aux = 8;
 
-
-
-
-
             for (int i = f; i < 8; i++)//muevo hacia abajo
             {
 
@@ -109,7 +105,7 @@ namespace WindowsFormsApp5_ESTE
 
             for (int i = 0; i < 8; i++)//diagonal abajo a la derecha
             {
-                if (f + i < 8 && c + i < 8)
+                if (f + i < 7 && c + i < 7)
                 {
                     if (tablero[f + i, c + i] != 'A' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T')
                     {
@@ -125,7 +121,7 @@ namespace WindowsFormsApp5_ESTE
             }
             for (int i = aux; i < 8; i++)
             {
-                if (f + i < 8 && c + i < 8)
+                if (f + i < 7 && c + i < 7)
                 {
                     if (tablero[f + i, c + i] != 'A' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T' && tablero[f + i, c + i] != '1')
                     {
@@ -138,8 +134,8 @@ namespace WindowsFormsApp5_ESTE
 
 
             for (int i = 0; i < 8; i++)//diagonal abajo a la izquierda 
-            {
-                if (c - i >= 0 && f + i < 8)
+            { 
+                if (c - i >= 0 && f + i < 7)
                 {
                     if (tablero[f + i, c - i] != 'A' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T')
                     {
@@ -154,7 +150,7 @@ namespace WindowsFormsApp5_ESTE
             }
             for (int i = aux; i < 8; i++)
             {
-                if (f + i < 8 && c - i >= 0)
+                if (f + i < 7 && c - i >= 0)
                 {
                     if (tablero[f + i, c - i] != 'A' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T' && tablero[f + i, c - i] != '1')
                     {
@@ -168,7 +164,7 @@ namespace WindowsFormsApp5_ESTE
 
             for (int i = 0; i < 8; i++)//diagonal arriba a la derecha
             {
-                if (c + i < 8 && f - i >= 0)
+                if (c + i < 7 && f - i >= 0)
                 {
                     if (tablero[f - i, c + i] != 'A' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T')
                     {
@@ -184,7 +180,7 @@ namespace WindowsFormsApp5_ESTE
             }
             for (int i = aux; i < 8; i++)
             {
-                if (f - i >= 0 && c + i < 8)
+                if (f - i >= 0 && c + i < 7)
                 {
                     if (tablero[f - i, c + i] != 'A' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T' && tablero[f - i, c + i] != '1')
                     {

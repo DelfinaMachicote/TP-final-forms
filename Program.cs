@@ -58,14 +58,6 @@ namespace WindowsFormsApp5_ESTE
                 Asignar(reina, rey, torre1, torre2, alfil1, alfil2, caballo1, caballo2, tablero);
 
                 //muevo cada pieza
-                reina.Mover(tablero);
-
-                rey.Mover(tablero);
-
-                alfil1.Mover(tablero);
-
-                alfil2.Mover(tablero);
-                tablero[alfil2.f, alfil2.c] = 'a';
 
                 torre1.Mover(tablero);
 
@@ -75,8 +67,16 @@ namespace WindowsFormsApp5_ESTE
                 caballo1.Mover(tablero);
 
                 caballo2.Mover(tablero);
+                tablero[caballo2.f, caballo2.c] = 'c';
 
+                rey.Mover(tablero);
 
+                reina.Mover(tablero);
+
+                alfil1.Mover(tablero);
+
+                alfil2.Mover(tablero);
+                tablero[alfil2.f, alfil2.c] = 'a';
 
 
                 //cuento los casilleros del tablero que se llenaron
@@ -96,7 +96,6 @@ namespace WindowsFormsApp5_ESTE
         {
             //pasamos todas las piezas por separado porque salta error cada vez que casteamos la clase padre
 
-
             Random rnd = new Random();
 
             t1.f = 0;//la torre 1 estara en la fila 1
@@ -106,8 +105,8 @@ namespace WindowsFormsApp5_ESTE
 
             while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c))
             {
-                reina.f = rnd.Next(2, 5);
-                reina.c = rnd.Next(2, 5);
+                reina.f = rnd.Next(1, 6);
+                reina.c = rnd.Next(1, 6);
 
                 rey.f = rnd.Next(1, 6);
                 rey.c = rnd.Next(1, 6);
@@ -201,6 +200,7 @@ namespace WindowsFormsApp5_ESTE
                     }
 
                     //implemento en el mismo for diferentes formas de rotar el tablero
+                    aux2[j,i]= tab[i, j];
                     aux3[j, i] = tab[i, j];
                     aux4[7 - i, 7 - j] = tab[i, j];
                     aux5[7 - i, 7 - j] = aux3[i, j];
@@ -218,24 +218,29 @@ namespace WindowsFormsApp5_ESTE
                     torre2.f = 0;
                     torre2.c = 7;
 
-                    reina.Mover(aux2);
-                    rey.Mover(aux2);
-                    alfil1.Mover(aux2);
-                    alfil2.Mover(aux2);
-                    aux2[alfil2.f, alfil2.c] = 'a';
                     torre1.Mover(aux2);
+                    
                     torre2.Mover(aux2);
                     aux2[torre2.f, torre2.c] = 't';
+
                     caballo1.Mover(aux2);
 
                     caballo2.Mover(aux2);
                     aux2[caballo2.f, caballo2.c] = 'c';
+                    
+                    rey.Mover(aux2);
+
+                    reina.Mover(aux2);
+                    
+                    alfil1.Mover(aux2);
+                    
+                    alfil2.Mover(aux2);
+                    aux2[alfil2.f, alfil2.c] = 'a';
                     return aux2;
 
                 case 2:
                     return aux3;
                 case 3:
-
                     return aux4;
                 case 4:
                     return aux5;
