@@ -8,11 +8,6 @@ namespace WindowsFormsApp5_ESTE
 {
     static class Program
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
-
-
         public static void Main()
         {
             Application.EnableVisualStyles();
@@ -24,25 +19,12 @@ namespace WindowsFormsApp5_ESTE
         {
 
             bool check = false;
-
             int cont_posiciones;
-
             char[,] aux = new char[8, 8];
+            Random rnd = new Random();
 
             while (check == false)
             {
-                Random rnd = new Random();
-
-                //genero todas las piezas sin restricciones en las posiciones
-                Reina reina = new Reina(rnd.Next(0, 7), rnd.Next(0, 7));
-                Rey rey = new Rey(rnd.Next(0, 7), rnd.Next(0, 7));
-                Torre torre1 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
-                Torre torre2 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
-                Alfil alfil1 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
-                Alfil alfil2 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
-                Caballo caballo1 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
-                Caballo caballo2 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
-
                 //creo el tablero
                 char[,] tablero = new char[8, 8];
                 //inicializo todo el tablero en 0
@@ -54,31 +36,32 @@ namespace WindowsFormsApp5_ESTE
                     }
                 }
 
+                //genero todas las piezas sin restricciones en las posiciones
+                Reina reina = new Reina(rnd.Next(0, 7), rnd.Next(0, 7));
+                Rey rey = new Rey(rnd.Next(0, 7), rnd.Next(0, 7));
+                Torre torre1 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
+                Torre torre2 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
+                Alfil alfil1 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
+                Alfil alfil2 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
+                Caballo caballo1 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
+                Caballo caballo2 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
+
+                
                 //me aseguro de que se cumplan todas las restricciones
                 Asignar(reina, rey, torre1, torre2, alfil1, alfil2, caballo1, caballo2, tablero);
 
                 //muevo cada pieza
-
                 torre1.Mover(tablero);
-
                 torre2.Mover(tablero);
                 tablero[torre2.f, torre2.c] = 't';
-
                 caballo1.Mover(tablero);
-
                 caballo2.Mover(tablero);
                 tablero[caballo2.f, caballo2.c] = 'c';
-
                 rey.Mover(tablero);
                 alfil1.Mover(tablero);
-
                 alfil2.Mover(tablero);
                 tablero[alfil2.f, alfil2.c] = 'a';
-
                 reina.Mover(tablero);
-
-              
-
 
                 //cuento los casilleros del tablero que se llenaron
                 cont_posiciones = Contar(tablero);
@@ -88,6 +71,7 @@ namespace WindowsFormsApp5_ESTE
                 {
                     check = true;
                     aux = tablero;
+
                 }
             }
             return aux;
@@ -124,8 +108,11 @@ namespace WindowsFormsApp5_ESTE
                 a2.f = reina.f;
                 a2.c = rnd.Next(1, 6);
 
+                int ac1 = a1.c;
+                int ac2 = a2.c;
+
                 //condicion para que un alfil este en un color y otro alfil este en el otro
-                if ((a2.c % 2 == 0 && a1.c % 2 == 0) || (a2.c % 2 == 1 && a1.c % 2 == 1))
+                if ((ac2 % 2 == 0 && ac1 % 2 == 0)|| ((ac2 + 1) % 2 == 0 && (ac1 + 1) % 2 == 0))
                 {
                     if (a2.c + 1 < 7)
                     {
@@ -137,193 +124,6 @@ namespace WindowsFormsApp5_ESTE
                     }
                 }
             }
-        }
-
-        public static char[,] Reordenar(char[,] tab, int caso)
-        {
-            Reina reina = new Reina(0, 0);
-            Rey rey = new Rey(0, 0);
-            Torre torre1 = new Torre(0, 0);
-            Torre torre2 = new Torre(0, 0);
-            Alfil alfil1 = new Alfil(0, 0);
-            Alfil alfil2 = new Alfil(0, 0);
-            Caballo caballo1 = new Caballo(0, 0);
-            Caballo caballo2 = new Caballo(0, 0);
-            char[,] aux2 = new char[8, 8];
-            char[,] aux3 = new char[8, 8];
-            char[,] aux4 = new char[8, 8];
-            char[,] aux5 = new char[8, 8];
-
-
-
-            for (int i = 0; i < 8; i++)//recorre el tablero y localiza cada pieza
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    if (tab[i, j] == 'D')
-                    {
-                        reina.f = i;
-                        reina.c = j;
-                    }
-                    if (tab[i, j] == 'R')
-                    {
-                        rey.f = i;
-                        rey.c = j;
-                    }
-                    if (tab[i, j] == 'T')
-                    {
-                        torre1.f = i;
-                        torre1.c = j;
-                    }
-                    if (tab[i, j] == 't')
-                    {
-                        torre2.f = i;
-                        torre2.c = j;
-                    }
-                    if (tab[i, j] == 'C')
-                    {
-                        caballo1.f = i;
-                        caballo1.c = j;
-                    }
-                    if (tab[i, j] == 'c')
-                    {
-                        caballo2.f = i;
-                        caballo2.c = j;
-                    }
-                    if (tab[i, j] == 'A')
-                    {
-                        alfil1.f = i;
-                        alfil1.c = j;
-                    }
-                    if (tab[i, j] == 'a')
-                    {
-                        alfil2.f = i;
-                        alfil2.c = j;
-                    }
-
-                    //implemento en el mismo for diferentes formas de rotar el tablero
-                    aux2[i,j] = tab[i, j];
-                    aux3[j, i] = tab[i, j];
-                }
-            }
-            for (int i = 8; i < 0; i--)//recorre el tablero y localiza cada pieza
-            {
-                for (int j = 8; j < 0; j--)
-                {
-                    if (tab[i, j] == 'D')
-                    {
-                        reina.f = i;
-                        reina.c = j;
-                    }
-                    if (tab[i, j] == 'R')
-                    {
-                        rey.f = i;
-                        rey.c = j;
-                    }
-                    if (tab[i, j] == 'T')
-                    {
-                        torre1.f = i;
-                        torre1.c = j;
-                    }
-                    if (tab[i, j] == 't')
-                    {
-                        torre2.f = i;
-                        torre2.c = j;
-                    }
-                    if (tab[i, j] == 'C')
-                    {
-                        caballo1.f = i;
-                        caballo1.c = j;
-                    }
-                    if (tab[i, j] == 'c')
-                    {
-                        caballo2.f = i;
-                        caballo2.c = j;
-                    }
-                    if (tab[i, j] == 'A')
-                    {
-                        alfil1.f = i;
-                        alfil1.c = j;
-                    }
-                    if (tab[i, j] == 'a')
-                    {
-                        alfil2.f = i;
-                        alfil2.c = j;
-                    }
-
-                    //implemento en el mismo for diferentes formas de rotar el tablero
-                    aux4[i, j] = tab[i, j];
-                    aux5[j, i] = tab[i, j];
-                }
-            }
-         
-
-            switch (caso)
-            {
-                case 1: //muevo solo las torres
-
-                    torre1.f = 7;
-                    torre1.c = 0;
-
-                    torre2.f = 0;
-                    torre2.c = 7;
-
-                    torre1.Mover(aux2);
-
-                    torre2.Mover(aux2);
-                    aux2[torre2.f, torre2.c] = 't';
-
-                    caballo1.Mover(aux2);
-
-                    caballo2.Mover(aux2);
-                    aux2[caballo2.f, caballo2.c] = 'c';
-
-                    rey.Mover(aux2);
-
-                    alfil1.Mover(aux2);
-
-                    alfil2.Mover(aux2);
-                    aux2[alfil2.f, alfil2.c] = 'a';
-
-                    reina.Mover(aux2);
-
-                   
-                    return aux2;
-
-                case 2:
-                    return aux3;
-                case 3:
-                    torre1.f = 7;
-                    torre1.c = 7;
-
-                    torre2.f = 0;
-                    torre2.c = 0;
-
-                    torre1.Mover(aux4);
-
-                    torre2.Mover(aux4);
-                    aux4[torre2.f, torre2.c] = 't';
-
-                    caballo1.Mover(aux4);
-
-                    caballo2.Mover(aux4);
-                    aux4[caballo2.f, caballo2.c] = 'c';
-
-                    rey.Mover(aux4);
-
-                    alfil1.Mover(aux4);
-
-                    alfil2.Mover(aux4);
-                    aux4[alfil2.f, alfil2.c] = 'a';
-
-                    reina.Mover(aux4);
-                    return aux4;
-                case 4:
-                  return aux5;
-                default: return tab;
-
-            }
-
         }
 
         public static int Contar(char[,] tablero)

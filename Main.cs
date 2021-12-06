@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp5_ESTE
 {
-    public partial class Main : Form
+  public partial class Main : Form
     {
        
         public Main()
@@ -58,6 +58,11 @@ namespace WindowsFormsApp5_ESTE
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

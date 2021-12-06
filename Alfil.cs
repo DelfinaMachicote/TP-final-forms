@@ -8,10 +8,12 @@ namespace WindowsFormsApp5_ESTE
 {
     class Alfil : Pieza
     {
+        int posicion;
         public Alfil(int f, int c)
         {
             this.f = f;
             this.c = c;
+            posicion = 8 * f + (c + 1);
         }
         public void Mover(char[,] tablero)
         {
@@ -31,7 +33,6 @@ namespace WindowsFormsApp5_ESTE
                         break;
                     }
                 }
-
             }
             for (int i = aux; i < 8; i++)
             {

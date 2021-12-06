@@ -8,10 +8,12 @@ namespace WindowsFormsApp5_ESTE
 {
     class Rey : Pieza
     {
+        int posicion;
         public Rey(int x, int y)
         {
             this.f = x;
             this.c = y;
+             posicion = 8 * f + (c + 1);
         }
 
         public void Mover(char[,] tablero)

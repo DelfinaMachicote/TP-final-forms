@@ -22,16 +22,13 @@ namespace WindowsFormsApp5_ESTE
             InitializeComponent();
             Titulo.Text = "Tablero " + cont;
             this.main = main;
-            
             tab = Program.Programa(this);
             aux = tab;
-            
 
-            
-        }    
-      
+        }
+
         private void Volver_Click(object sender, EventArgs e)
-        {    
+        {
             main.Show();
             this.Close();
         }
@@ -46,24 +43,15 @@ namespace WindowsFormsApp5_ESTE
         }
         private void Siguiente_tablero_Click(object sender, EventArgs e)
         {
-            char[,] auxiliar = new char[8, 8];
-            auxiliar = tab;
             int cantidad = main.returnCant();
             if (cont < cantidad)
             {
-                if (cont <= 4)
+                while (aux == tab)
                 {
-                    tab = Program.Reordenar(auxiliar, cont);
+                    aux = Program.Programa(this);
+
                 }
-                else {
-                    while (aux == tab)
-                    {
-                        aux = Program.Programa(this);
-                        
-                    }
-                    tab = aux;
-                }
-          
+                tab = aux;
                 cont++;
                 Titulo.Text = "Tablero " + cont;
                 tab_imprimir.Controls.Clear();
@@ -74,7 +62,6 @@ namespace WindowsFormsApp5_ESTE
                 Aviso1 aviso = new Aviso1(main, this);
                 aviso.Show();
             }
-
 
         }
         private void Titulo_TextChanged(object sender, EventArgs e)
@@ -90,53 +77,54 @@ namespace WindowsFormsApp5_ESTE
             {
                 for (int c = 0; c < 8; c++)
                 {
-                    var btn = new Button();
-                    
-                    btn.Size = _size;
-                    btn.Location = new Point(c * _size.Width, f * _size.Height);
-                    btn.BackColor = (c + f) % 2 == 0 ? Color.BurlyWood : Color.White;
+                    var lbl = new Label();
+
+                    lbl.Size = _size;
+                    lbl.Location = new Point(c * _size.Width, f * _size.Height);
+                    lbl.BackColor = (c + f) % 2 == 0 ? Color.BurlyWood : Color.White;
+                    lbl.BorderStyle = BorderStyle.FixedSingle;
                     if (tab[f, c] == '1')
                     {
-                        btn.Text = "1";
+                        lbl.Text = "1";
                     }
                     if (tab[f, c] == '2')
                     {
-                        btn.Text = "2";
+                        lbl.Text = "2";
                     }
                     if (tab[f, c] == 'D')
                     {
-                        btn.Text = "D";
+                        lbl.Text = "D";
                     }
                     if (tab[f, c] == 'A')
                     {
-                        btn.Text = "A";
+                        lbl.Text = "A";
                     }
                     if (tab[f, c] == 'a')
                     {
-                        btn.Text = "A";
+                        lbl.Text = "A";
                     }
                     if (tab[f, c] == 'R')
                     {
-                        btn.Text = "R";
+                        lbl.Text = "R";
                     }
                     if (tab[f, c] == 'T')
                     {
-                        btn.Text = "T";
+                        lbl.Text = "T";
                     }
                     if (tab[f, c] == 't')
                     {
-                        btn.Text = "T";
+                        lbl.Text = "T";
                     }
                     if (tab[f, c] == 'C')
                     {
-                        btn.Text = "C";
+                        lbl.Text = "C";
                     }
                     if (tab[f, c] == 'c')
                     {
-                        btn.Text = "C";
+                        lbl.Text = "C";
                     }
 
-                    tab_imprimir.Controls.Add(btn);
+                    tab_imprimir.Controls.Add(lbl);
                 }
             }
         }

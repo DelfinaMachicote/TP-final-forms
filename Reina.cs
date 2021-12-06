@@ -8,12 +8,12 @@ namespace WindowsFormsApp5_ESTE
 {
     class Reina : Pieza
     {
-
+        int posicion;
         public Reina(int x, int y)
         {
             this.f = x;
             this.c = y;
-            //  Posiciones();//achico el tablero
+            posicion = 8 * f + (c + 1);
         }
 
         public void Mover(char[,] tablero)

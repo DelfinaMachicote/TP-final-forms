@@ -135,6 +135,7 @@ namespace WindowsFormsApp5_ESTE
             this.Controls.Add(this.Iniciar);
             this.Name = "Main";
             this.Text = "Cobertura de tablero de ajedrez";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
