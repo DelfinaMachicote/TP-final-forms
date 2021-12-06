@@ -25,6 +25,16 @@ namespace WindowsFormsApp5_ESTE
 
             while (check == false)
             {
+                //genero todas las piezas sin restricciones en las posiciones
+                Reina reina = new Reina(rnd.Next(0, 7), rnd.Next(0, 7));
+                Rey rey = new Rey(rnd.Next(0, 7), rnd.Next(0, 7));
+                Torre torre1 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
+                Torre torre2 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
+                Alfil alfil1 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
+                Alfil alfil2 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
+                Caballo caballo1 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
+                Caballo caballo2 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
+
                 //creo el tablero
                 char[,] tablero = new char[8, 8];
                 //inicializo todo el tablero en 0
@@ -36,15 +46,7 @@ namespace WindowsFormsApp5_ESTE
                     }
                 }
 
-                //genero todas las piezas sin restricciones en las posiciones
-                Reina reina = new Reina(rnd.Next(0, 7), rnd.Next(0, 7));
-                Rey rey = new Rey(rnd.Next(0, 7), rnd.Next(0, 7));
-                Torre torre1 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
-                Torre torre2 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
-                Alfil alfil1 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
-                Alfil alfil2 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
-                Caballo caballo1 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
-                Caballo caballo2 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
+               
 
                 
                 //me aseguro de que se cumplan todas las restricciones
@@ -116,7 +118,7 @@ namespace WindowsFormsApp5_ESTE
                 {
                     if (a2.c + 1 < 7)
                     {
-                        a2.c += 1;
+                        a2.c = a2.c + 1;
                     }
                     else
                     {
