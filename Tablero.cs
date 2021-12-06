@@ -26,7 +26,7 @@ namespace WindowsFormsApp5_ESTE
             aux = tab;
 
         }
-
+    
         private void Volver_Click(object sender, EventArgs e)
         {
             main.Show();
@@ -130,3 +130,381 @@ namespace WindowsFormsApp5_ESTE
         }
     }
 }
+/* public bool comparar(char[,] t, int cont )
+     {
+         char[,] aux1 = new char[8, 8];
+         char[,] aux2 = new char[8, 8];
+         char[,] aux3 = new char[8, 8];
+         char[,] aux4 = new char[8, 8];
+         char[,] aux5 = new char[8, 8];
+         char[,] aux6 = new char[8, 8];
+         char[,] aux7 = new char[8, 8];
+         char[,] aux8 = new char[8, 8];
+         char[,] aux9 = new char[8, 8];
+         char[,] aux10 = new char[8, 8];
+
+         switch (cont)
+         {
+             case 1:
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux1[i, j] = t[i, j];
+                     }
+                 }
+                 return true;
+             case 2:
+                 int acum1 = 0;
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux2[i, j] = t[i, j];
+                         if(aux1[i, j] == t[i, j])
+                         {
+                             acum1 = acum1 + 1;
+                         }
+                     }
+                 }
+                 if (acum1 == 64) { return false; } else return true;
+
+
+             case 3:
+                 int acum2 = 0;
+                 int acum3 = 0;
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux3[i, j] = t[i, j];
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum2 = acum2 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum3 = acum3 + 1;
+                         }
+                     }
+                 }
+                 if (acum2 == 64||acum3==64)
+                     return true;
+                 else return false;
+
+             case 4:
+                 int acum4 = 0;
+                 int acum5 = 0;
+                 int acum6 = 0;
+
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux4[i, j] = t[i, j];
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum4 = acum4 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum5 = acum5 + 1;
+                         }
+                         if (aux3[i, j] == t[i, j])
+                         {
+                             acum6 = acum6 + 1;
+                         }
+                     }
+                 }
+                 if (acum4 == 64 || acum5 == 64||acum6==64)
+                     return true;
+                 else return false;
+
+             case 5:
+                 int acum7 = 0;
+                 int acum8 = 0;
+                 int acum9 = 0;
+                 int acum10 = 0;
+
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux5[i, j] = t[i, j];
+
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum7 = acum7 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum8 = acum8 + 1;
+                         }
+                         if (aux3[i, j] == t[i, j])
+                         {
+                             acum9 = acum9 + 1;
+                         }
+                         if (aux4[i, j] == t[i, j])
+                         {
+                             acum10 = acum10 + 1;
+                         }
+                     }
+                 }
+                 if (acum7 == 64 || acum8 == 64 || acum9 == 64 || acum10 == 64)
+                     return true;
+                 else return false;
+
+
+             case 6:
+                 int acum11 = 0;
+                 int acum12 = 0;
+                 int acum13 = 0;
+                 int acum14 = 0;
+                 int acum15 = 0;
+
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux6[i, j] = t[i, j];
+
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum11 = acum11 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum12 = acum12 + 1;
+                         }
+                         if (aux3[i, j] == t[i, j])
+                         {
+                             acum13 = acum13 + 1;
+                         }
+                         if (aux4[i, j] == t[i, j])
+                         {
+                             acum14 = acum14 + 1;
+                         }
+                         if (aux5[i, j] == t[i, j])
+                         {
+                             acum15 = acum15 + 1;
+                         }
+                     }
+                 }
+                 if (acum11 == 64 || acum12 == 64 || acum13 == 64 || acum14 == 64 || acum15 == 64)
+                     return true;
+                 else return false;
+
+             case 7:
+                 int acum16 = 0;
+                 int acum17 = 0;
+                 int acum18 = 0;
+                 int acum19 = 0;
+                 int acum20 = 0;
+                 int acum21 = 0;
+
+
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux7[i, j] = t[i, j];
+
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum16 = acum16 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum17 = acum17 + 1;
+                         }
+                         if (aux3[i, j] == t[i, j])
+                         {
+                             acum18 = acum18 + 1;
+                         }
+                         if (aux4[i, j] == t[i, j])
+                         {
+                             acum19 = acum19 + 1;
+                         }
+                         if (aux5[i, j] == t[i, j])
+                         {
+                             acum20 = acum20 + 1;
+                         }
+                         if (aux6[i, j] == t[i, j])
+                         {
+                             acum21 = acum21 + 1;
+                         }
+                     }
+                 }
+                 if (acum16 == 64 || acum17 == 64 || acum18 == 64 || acum19 == 64 || acum20 == 64|| acum21 == 64)
+                     return true;
+                 else return false;
+
+             case 8:
+                 int acum22 = 0;
+                 int acum23 = 0;
+                 int acum24 = 0;
+                 int acum25 = 0;
+                 int acum26 = 0;
+                 int acum27 = 0;
+                 int acum28 = 0;
+
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux7[i, j] = t[i, j];
+
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum22 = acum22 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum23 = acum23 + 1;
+                         }
+                         if (aux3[i, j] == t[i, j])
+                         {
+                             acum24 = acum24 + 1;
+                         }
+                         if (aux4[i, j] == t[i, j])
+                         {
+                             acum25 = acum25 + 1;
+                         }
+                         if (aux5[i, j] == t[i, j])
+                         {
+                             acum26 = acum26 + 1;
+                         }
+                         if (aux6[i, j] == t[i, j])
+                         {
+                             acum27 = acum27 + 1;
+                         }
+                         if (aux7[i, j] == t[i, j])
+                         {
+                             acum28 = acum28 + 1;
+                         }
+                     }
+                 }
+                 if (acum22 == 64 || acum23 == 64 || acum24 == 64 || acum25 == 64 || acum26 == 64 || acum27 == 64 || acum28 == 64)
+                     return true;
+                 else return false;
+
+             case 9:
+                 int acum29 = 0;
+                 int acum30 = 0;
+                 int acum31 = 0;
+                 int acum32 = 0;
+                 int acum33 = 0;
+                 int acum34 = 0;
+                 int acum35 = 0;
+                 int acum36 = 0;
+
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux7[i, j] = t[i, j];
+
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum29 = acum29 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum30 = acum30 + 1;
+                         }
+                         if (aux3[i, j] == t[i, j])
+                         {
+                             acum31 = acum31 + 1;
+                         }
+                         if (aux4[i, j] == t[i, j])
+                         {
+                             acum32 = acum32+ 1;
+                         }
+                         if (aux5[i, j] == t[i, j])
+                         {
+                             acum33 = acum33 + 1;
+                         }
+                         if (aux6[i, j] == t[i, j])
+                         {
+                             acum34 = acum34 + 1;
+                         }
+                         if (aux7[i, j] == t[i, j])
+                         {
+                             acum35 = acum35 + 1;
+                         }
+                         if (aux8[i, j] == t[i, j])
+                         {
+                             acum36 = acum36 + 1;
+                         }
+                     }
+                 }
+                 if (acum29 == 64 || acum30 == 64 || acum31 == 64 || acum32 == 64 || acum33 == 64 || acum34== 64 || acum35== 64 || acum36 == 64)
+                     return true;
+                 else return false;
+             case 10:
+                 int acum37 = 0;
+                 int acum38 = 0;
+                 int acum39 = 0;
+                 int acum40 = 0;
+                 int acum41 = 0;
+                 int acum42 = 0;
+                 int acum43 = 0;
+                 int acum44 = 0;
+                 int acum45 = 0;
+
+                 for (int i = 0; i < 8; i++)
+                 {
+                     for (int j = 0; j < 8; j++)
+                     {
+                         aux7[i, j] = t[i, j];
+
+                         if (aux1[i, j] == t[i, j])
+                         {
+                             acum37 = acum37 + 1;
+                         }
+                         if (aux2[i, j] == t[i, j])
+                         {
+                             acum38 = acum38 + 1;
+                         }
+                         if (aux3[i, j] == t[i, j])
+                         {
+                             acum39 = acum39 + 1;
+                         }
+                         if (aux4[i, j] == t[i, j])
+                         {
+                             acum40 = acum40 + 1;
+                         }
+                         if (aux5[i, j] == t[i, j])
+                         {
+                             acum41 = acum41 + 1;
+                         }
+                         if (aux6[i, j] == t[i, j])
+                         {
+                             acum42 = acum42 + 1;
+                         }
+                         if (aux7[i, j] == t[i, j])
+                         {
+                             acum43 = acum43 + 1;
+                         }
+                         if (aux8[i, j] == t[i, j])
+                         {
+                             acum44 = acum44+ 1;
+                         }
+                         if (aux9[i, j] == t[i, j])
+                         {
+                             acum45 = acum45 + 1;
+                         }
+                     }
+                 }
+                 if (acum37 == 64 || acum38 == 64 || acum39 == 64 || acum40== 64 || acum41 == 64 || acum42 == 64 || acum43== 64 || acum44== 64 || acum45 == 64)
+                     return true;
+                 else return false;
+             default: return false;
+         }
+
+
+
+
+
+
+     }*/
