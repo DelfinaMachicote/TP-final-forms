@@ -105,8 +105,8 @@ namespace WindowsFormsApp5_ESTE
 
             while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c))
             {
-                reina.f = rnd.Next(1, 6);
-                reina.c = rnd.Next(1, 6);
+                reina.f = rnd.Next(2, 5);
+                reina.c = rnd.Next(2, 5);
 
                 rey.f = rnd.Next(1, 6);
                 rey.c = rnd.Next(1, 6);
@@ -146,7 +146,7 @@ namespace WindowsFormsApp5_ESTE
             Torre torre2 = new Torre(0, 0);
             Alfil alfil1 = new Alfil(0, 0);
             Alfil alfil2 = new Alfil(0, 0);
-            Caballo caballo1 = new Caballo(0, 0);
+            Caballo caballo1 = new Caballo(7, 7);
             Caballo caballo2 = new Caballo(0, 0);
             char[,] aux2 = new char[8, 8];
             char[,] aux3 = new char[8, 8];

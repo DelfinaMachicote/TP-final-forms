@@ -18,10 +18,11 @@ namespace WindowsFormsApp5_ESTE
         char[,] aux = new char[8, 8];
         public Tablero(Main main)
         {
+            cont = 1;
             InitializeComponent();
             Titulo.Text = "Tablero " + cont;
             this.main = main;
-            cont = 1;
+            
             tab = Program.Programa(this);
             aux = tab;
             
