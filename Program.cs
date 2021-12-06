@@ -22,11 +22,12 @@ namespace WindowsFormsApp5_ESTE
             int cont_posiciones;
             char[,] aux = new char[8, 8];
             Random rnd = new Random();
-
+            //creo el tablero
+            char[,] tablero = new char[8, 8];
             while (check == false)
             {
-                //creo el tablero
-                char[,] tablero = new char[8, 8];
+                
+                
                 //inicializo todo el tablero en 0
                 for (int i = 0; i < 8; i++)
                 {
@@ -41,8 +42,8 @@ namespace WindowsFormsApp5_ESTE
                 Rey rey = new Rey(rnd.Next(0, 7), rnd.Next(0, 7));
                 Torre torre1 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
                 Torre torre2 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
-                Alfil alfil1 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
-                Alfil alfil2 = new Alfil(rnd.Next(0, 7), rnd.Next(0, 7));
+                Alfil alfil1 = new Alfil(rnd.Next(1, 6), rnd.Next(1, 6));
+                Alfil alfil2 = new Alfil(rnd.Next(1, 6), rnd.Next(1, 6));
                 Caballo caballo1 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
                 Caballo caballo2 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
 
@@ -88,7 +89,7 @@ namespace WindowsFormsApp5_ESTE
             t2.f = 7;//la torre 2 estara en la fila 8
             t2.c = 7;
 
-            while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (t1.f==c1.f&& t1.c==c1.c)|| (t1.f == c2.f && t1.c == c2.c) || (t2.f == c1.f && t2.c == c1.c) || (t2.f == c2.f && t2.c == c2.c))
+            while (((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) ||  (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) ||   (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (t1.f==c1.f&& t1.c==c1.c)|| (t1.f == c2.f && t1.c == c2.c) || (t2.f == c1.f && t2.c == c1.c) || (t2.f == c2.f && t2.c == c2.c)) && (reina.f!= a1.f || reina.f!= a2.f) )
             {
                 reina.f = rnd.Next(1, 6);
                 reina.c = rnd.Next(1, 6);
