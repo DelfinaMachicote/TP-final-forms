@@ -204,11 +204,59 @@ namespace WindowsFormsApp5_ESTE
                     //implemento en el mismo for diferentes formas de rotar el tablero
                     aux2[i,j] = tab[i, j];
                     aux3[j, i] = tab[i, j];
-                    aux4[7 - i, 7 - j] = tab[i, j];
-                    aux5[7 - i, 7 - j] = aux3[i, j];
                 }
             }
+            for (int i = 8; i < 0; i--)//recorre el tablero y localiza cada pieza
+            {
+                for (int j = 8; j < 0; j--)
+                {
+                    if (tab[i, j] == 'D')
+                    {
+                        reina.f = i;
+                        reina.c = j;
+                    }
+                    if (tab[i, j] == 'R')
+                    {
+                        rey.f = i;
+                        rey.c = j;
+                    }
+                    if (tab[i, j] == 'T')
+                    {
+                        torre1.f = i;
+                        torre1.c = j;
+                    }
+                    if (tab[i, j] == 't')
+                    {
+                        torre2.f = i;
+                        torre2.c = j;
+                    }
+                    if (tab[i, j] == 'C')
+                    {
+                        caballo1.f = i;
+                        caballo1.c = j;
+                    }
+                    if (tab[i, j] == 'c')
+                    {
+                        caballo2.f = i;
+                        caballo2.c = j;
+                    }
+                    if (tab[i, j] == 'A')
+                    {
+                        alfil1.f = i;
+                        alfil1.c = j;
+                    }
+                    if (tab[i, j] == 'a')
+                    {
+                        alfil2.f = i;
+                        alfil2.c = j;
+                    }
 
+                    //implemento en el mismo for diferentes formas de rotar el tablero
+                    aux4[i, j] = tab[i, j];
+                    aux5[j, i] = tab[i, j];
+                }
+            }
+         
 
             switch (caso)
             {
@@ -232,17 +280,43 @@ namespace WindowsFormsApp5_ESTE
 
                     rey.Mover(aux2);
 
-                    reina.Mover(aux2);
-
                     alfil1.Mover(aux2);
 
                     alfil2.Mover(aux2);
                     aux2[alfil2.f, alfil2.c] = 'a';
+
+                    reina.Mover(aux2);
+
+                   
                     return aux2;
 
                 case 2:
                     return aux3;
                 case 3:
+                    torre1.f = 7;
+                    torre1.c = 7;
+
+                    torre2.f = 0;
+                    torre2.c = 0;
+
+                    torre1.Mover(aux4);
+
+                    torre2.Mover(aux4);
+                    aux4[torre2.f, torre2.c] = 't';
+
+                    caballo1.Mover(aux4);
+
+                    caballo2.Mover(aux4);
+                    aux4[caballo2.f, caballo2.c] = 'c';
+
+                    rey.Mover(aux4);
+
+                    alfil1.Mover(aux4);
+
+                    alfil2.Mover(aux4);
+                    aux4[alfil2.f, alfil2.c] = 'a';
+
+                    reina.Mover(aux4);
                     return aux4;
                 case 4:
                   return aux5;
