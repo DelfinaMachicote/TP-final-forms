@@ -70,13 +70,14 @@ namespace WindowsFormsApp5_ESTE
                 tablero[caballo2.f, caballo2.c] = 'c';
 
                 rey.Mover(tablero);
-
-                reina.Mover(tablero);
-
                 alfil1.Mover(tablero);
 
                 alfil2.Mover(tablero);
                 tablero[alfil2.f, alfil2.c] = 'a';
+
+                reina.Mover(tablero);
+
+              
 
 
                 //cuento los casilleros del tablero que se llenaron
@@ -103,10 +104,10 @@ namespace WindowsFormsApp5_ESTE
             t2.f = 7;//la torre 2 estara en la fila 8
             t2.c = 7;
 
-            while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c))
+            while ((reina.f == c2.f && reina.c == c2.c) || (c2.f == a2.f && c2.c == a2.c) || (c2.f == c1.f && c2.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (a2.f == c2.f && a2.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (c1.f == a2.f && c1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (c1.f == c2.f && c1.c == c2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == rey.f && a2.c == rey.c) || (reina.f == a2.f && reina.c == a2.c) || (a1.f == a2.f && a1.c == a2.c) || (a2.f == c1.f && a2.c == c1.c) || (a2.f == c2.f && a2.c == c2.c) || (a1.f == rey.f && a1.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (a1.f == a2.f && a1.c == a2.c) || (a1.f == c1.f && a1.c == c1.c) || (a1.f == c2.f && a1.c == c2.c) || (reina.f == rey.f && reina.c == rey.c) || (rey.f == a1.f && rey.c == a1.c) || (rey.f == a2.f && rey.c == a2.c) || (reina.f == rey.f && reina.c == rey.c) || (reina.f == a1.f && reina.c == a1.c) || (reina.f == a2.f && reina.c == a2.c) || (reina.f == c2.f && reina.c == c2.c) || (reina.f == c1.f && reina.c == c1.c) || (t1.f==c1.f&& t1.c==c1.c)|| (t1.f == c2.f && t1.c == c2.c) || (t2.f == c1.f && t2.c == c1.c) || (t2.f == c2.f && t2.c == c2.c))
             {
-                reina.f = rnd.Next(2, 5);
-                reina.c = rnd.Next(2, 5);
+                reina.f = rnd.Next(1, 6);
+                reina.c = rnd.Next(1, 6);
 
                 rey.f = rnd.Next(1, 6);
                 rey.c = rnd.Next(1, 6);
@@ -244,7 +245,7 @@ namespace WindowsFormsApp5_ESTE
                 case 3:
                     return aux4;
                 case 4:
-                    return aux5;
+                  return aux5;
                 default: return tab;
 
             }
