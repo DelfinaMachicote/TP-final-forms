@@ -147,7 +147,7 @@ namespace WindowsFormsApp5_ESTE
             Torre torre2 = new Torre(0, 0);
             Alfil alfil1 = new Alfil(0, 0);
             Alfil alfil2 = new Alfil(0, 0);
-            Caballo caballo1 = new Caballo(7, 7);
+            Caballo caballo1 = new Caballo(0, 0);
             Caballo caballo2 = new Caballo(0, 0);
             char[,] aux2 = new char[8, 8];
             char[,] aux3 = new char[8, 8];
