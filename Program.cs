@@ -29,7 +29,7 @@ namespace WindowsFormsApp5_ESTE
 
             char[,] aux = new char[8, 8];
 
-            while (check==false)
+            while (check == false)
             {
                 Random rnd = new Random();
 
@@ -128,7 +128,7 @@ namespace WindowsFormsApp5_ESTE
                 {
                     if (a2.c + 1 < 7)
                     {
-                       a2.c += 1;
+                        a2.c += 1;
                     }
                     else
                     {
@@ -138,7 +138,7 @@ namespace WindowsFormsApp5_ESTE
             }
         }
 
-        public static char[,] Reordenar(char[,] tab,int caso)
+        public static char[,] Reordenar(char[,] tab, int caso)
         {
             Reina reina = new Reina(0, 0);
             Rey rey = new Rey(0, 0);
@@ -152,6 +152,7 @@ namespace WindowsFormsApp5_ESTE
             char[,] aux3 = new char[8, 8];
             char[,] aux4 = new char[8, 8];
             char[,] aux5 = new char[8, 8];
+
 
 
             for (int i = 0; i < 8; i++)//recorre el tablero y localiza cada pieza
@@ -200,18 +201,18 @@ namespace WindowsFormsApp5_ESTE
                     }
 
                     //implemento en el mismo for diferentes formas de rotar el tablero
-                    aux2[j,i]= tab[i, j];
+                    aux2[i,j] = tab[i, j];
                     aux3[j, i] = tab[i, j];
                     aux4[7 - i, 7 - j] = tab[i, j];
                     aux5[7 - i, 7 - j] = aux3[i, j];
                 }
             }
 
-            
+
             switch (caso)
             {
                 case 1: //muevo solo las torres
-                    
+
                     torre1.f = 7;
                     torre1.c = 0;
 
@@ -219,7 +220,7 @@ namespace WindowsFormsApp5_ESTE
                     torre2.c = 7;
 
                     torre1.Mover(aux2);
-                    
+
                     torre2.Mover(aux2);
                     aux2[torre2.f, torre2.c] = 't';
 
@@ -227,13 +228,13 @@ namespace WindowsFormsApp5_ESTE
 
                     caballo2.Mover(aux2);
                     aux2[caballo2.f, caballo2.c] = 'c';
-                    
+
                     rey.Mover(aux2);
 
                     reina.Mover(aux2);
-                    
+
                     alfil1.Mover(aux2);
-                    
+
                     alfil2.Mover(aux2);
                     aux2[alfil2.f, alfil2.c] = 'a';
                     return aux2;
@@ -245,16 +246,9 @@ namespace WindowsFormsApp5_ESTE
                 case 4:
                     return aux5;
                 default: return tab;
-                    
+
             }
 
-            
-
-
-
-
-
-           
         }
 
         public static int Contar(char[,] tablero)

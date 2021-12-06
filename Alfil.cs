@@ -21,7 +21,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (f + i < 8 && c + i < 8)
                 {
-                    if (tablero[f + i, c + i] != 'D' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T')
+                    if (tablero[f + i, c + i] != 'D' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T' && tablero[f + i, c + i] != 't' && tablero[f + i, c + i] != 'A' && tablero[f + i, c + i] != 'a' && tablero[f + i, c + i] != 'c')
                     {
                         tablero[f + i, c + i] = '1';
                     }
@@ -37,7 +37,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (f + i < 8 && c + i < 8)
                 {
-                    if (tablero[f + i, c + i] != 'D' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T' && tablero[f + i, c + i] != '1')
+                    if (tablero[f + i, c + i] != 'D' && tablero[f + i, c + i] != 'R' && tablero[f + i, c + i] != 'C' && tablero[f + i, c + i] != 'T' && tablero[f + i, c + i] != '1' && tablero[f + i, c + i] != 't' && tablero[f + i, c + i] != 'A' && tablero[f + i, c + i] != 'a' && tablero[f + i, c + i] != 'c')
                     {
                         tablero[f + i, c + i] = '2';
                     }
@@ -51,7 +51,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (c - i >= 0 && f + i < 8)
                 {
-                    if (tablero[f + i, c - i] != 'D' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T')
+                    if (tablero[f + i, c - i] != 'D' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T' && tablero[f + i, c - i] != 't' && tablero[f + i, c - i] != 'A' && tablero[f + i, c - i] != 'a' && tablero[f + i, c - i] != 'c')
                     {
                         tablero[f + i, c - i] = '1';
                     }
@@ -66,7 +66,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (f + i < 8 && c - i >= 0)
                 {
-                    if (tablero[f + i, c - i] != 'D' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T' && tablero[f + i, c - i] != '1')
+                    if (tablero[f + i, c - i] != 'D' && tablero[f + i, c - i] != 'R' && tablero[f + i, c - i] != 'C' && tablero[f + i, c - i] != 'T' && tablero[f + i, c - i] != '1' && tablero[f + i, c - i] != 't' && tablero[f + i, c - i] != 'A' && tablero[f + i, c - i] != 'a' && tablero[f + i, c - i] != 'c')
                     {
                         tablero[f + i, c - i] = '2';
                     }
@@ -80,7 +80,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (c + i < 8 && f - i >= 0)
                 {
-                    if (tablero[f - i, c + i] != 'D' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T')
+                    if (tablero[f - i, c + i] != 'D' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T' && tablero[f - i, c + i] != 't' && tablero[f - i, c + i] != 'A' && tablero[f - i, c + i] != 'a' && tablero[f - i, c + i] != 'c')
                     {
 
                         tablero[f - i, c + i] = '1';
@@ -96,7 +96,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (f - i >= 0 && c + i < 8)
                 {
-                    if (tablero[f - i, c + i] != 'D' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T' && tablero[f - i, c + i] != '1')
+                    if (tablero[f - i, c + i] != 'D' && tablero[f - i, c + i] != 'R' && tablero[f - i, c + i] != 'C' && tablero[f - i, c + i] != 'T' && tablero[f - i, c + i] != '1' && tablero[f - i, c + i] != 't' && tablero[f - i, c + i] != 'A' && tablero[f - i, c + i] != 'a' && tablero[f - i, c + i] != 'c')
                     {
 
                         tablero[f - i, c + i] = '2';
@@ -105,15 +105,13 @@ namespace WindowsFormsApp5_ESTE
 
             }
 
-
             aux = 8;
-
 
             for (int i = 0; i < 8; i++)//diagonal arriba a la izquierda
             {
                 if (f - i >= 0 && c - i >= 0)
                 {
-                    if (tablero[f - i, c - i] != 'D' && tablero[f - i, c - i] != 'R' && tablero[f - i, c - i] != 'C' && tablero[f - i, c - i] != 'T')
+                    if (tablero[f - i, c - i] != 'D' && tablero[f - i, c - i] != 'R' && tablero[f - i, c - i] != 'C' && tablero[f - i, c - i] != 'T' && tablero[f - i, c - i] != 't' && tablero[f - i, c - i] != 'A' && tablero[f - i, c - i] != 'a' && tablero[f - i, c - i] != 'c')
                     {
 
                         tablero[f - i, c - i] = '1';
@@ -129,7 +127,7 @@ namespace WindowsFormsApp5_ESTE
             {
                 if (f - i >= 0 && c - i >= 0)
                 {
-                    if (tablero[f - i, c - i] != 'D' && tablero[f - i, c - i] != 'R' && tablero[f - i, c - i] != 'C' && tablero[f - i, c - i] != 'T' && tablero[f - i, c - i] != '1')
+                    if (tablero[f - i, c - i] != 'D' && tablero[f - i, c - i] != 'R' && tablero[f - i, c - i] != 'C' && tablero[f - i, c - i] != 'T' && tablero[f - i, c - i] != '1' && tablero[f - i, c - i] != 't' && tablero[f - i, c - i] != 'A' && tablero[f - i, c - i] != 'a' && tablero[f - i, c - i] != 'c')
                     {
                         tablero[f - i, c - i] = '2';
                     }
