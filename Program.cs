@@ -38,14 +38,14 @@ namespace WindowsFormsApp5_ESTE
 
 
                 //genero todas las piezas sin restricciones en las posiciones
-                Reina reina = new Reina(rnd.Next(0, 7), rnd.Next(0, 7));
-                Rey rey = new Rey(rnd.Next(0, 7), rnd.Next(0, 7));
+                Reina reina = new Reina(rnd.Next(1, 6), rnd.Next(1, 6));
+                Rey rey = new Rey(rnd.Next(1, 6), rnd.Next(1, 6));
                 Torre torre1 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
                 Torre torre2 = new Torre(rnd.Next(0, 7), rnd.Next(0, 7));
                 Alfil alfil1 = new Alfil(reina.f, rnd.Next(1, 6));
                 Alfil alfil2 = new Alfil(reina.f, rnd.Next(1, 6));
-                Caballo caballo1 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
-                Caballo caballo2 = new Caballo(rnd.Next(0, 7), rnd.Next(0, 7));
+                Caballo caballo1 = new Caballo(rnd.Next(1, 6), rnd.Next(1, 6));
+                Caballo caballo2 = new Caballo(rnd.Next(1, 6), rnd.Next(1, 6));
 
 
                 
@@ -57,6 +57,7 @@ namespace WindowsFormsApp5_ESTE
                 torre2.Mover(tablero);
                 tablero[torre2.f, torre2.c] = 't';
                 caballo1.Mover(tablero);
+                tablero[caballo1.f, caballo1.c] = 'C';
                 caballo2.Mover(tablero);
                 tablero[caballo2.f, caballo2.c] = 'c';
                 rey.Mover(tablero);
@@ -73,6 +74,7 @@ namespace WindowsFormsApp5_ESTE
                 {
                     check = true;
                     aux = tablero;
+                 
 
                 }
             }
@@ -138,6 +140,7 @@ namespace WindowsFormsApp5_ESTE
                 }
 
             }
+
         }
 
         public static int Contar(char[,] tablero)
