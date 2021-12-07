@@ -88,45 +88,56 @@ namespace WindowsFormsApp5_ESTE
                     lbl.Location = new Point(c * _size.Width, f * _size.Height);
                     lbl.BackColor = (c + f) % 2 == 0 ? Color.BurlyWood : Color.White;
                     lbl.BorderStyle = BorderStyle.FixedSingle;
-                    if (tab[f, c] == '1')
-                    {
-                        lbl.Text = "1";
-                    }
+                   // if (tab[f, c] == '1')
+                  //  {
+                       // lbl.Text = "1";
+                   // }
                     if (tab[f, c] == '2')
                     {
-                        lbl.Text = "2";
+                        lbl.Text = "*";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
+                        
+                        
                     }
                     if (tab[f, c] == 'D')
                     {
                         lbl.Text = "D";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     if (tab[f, c] == 'A')
                     {
                         lbl.Text = "A";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     if (tab[f, c] == 'a')
                     {
                         lbl.Text = "A";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     if (tab[f, c] == 'R')
                     {
                         lbl.Text = "R";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     if (tab[f, c] == 'T')
                     {
                         lbl.Text = "T";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     if (tab[f, c] == 't')
                     {
                         lbl.Text = "T";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     if (tab[f, c] == 'C')
                     {
                         lbl.Text = "C";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                     if (tab[f, c] == 'c')
                     {
                         lbl.Text = "C";
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
                     }
                   
 
