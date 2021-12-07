@@ -30,6 +30,7 @@ namespace WindowsFormsApp5_ESTE
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Costos));
             this.Volver = new System.Windows.Forms.Button();
             this.Cerrar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,7 +39,7 @@ namespace WindowsFormsApp5_ESTE
             // 
             // Volver
             // 
-            this.Volver.Location = new System.Drawing.Point(598, 487);
+            this.Volver.Location = new System.Drawing.Point(600, 503);
             this.Volver.Name = "Volver";
             this.Volver.Size = new System.Drawing.Size(105, 39);
             this.Volver.TabIndex = 0;
@@ -48,7 +49,7 @@ namespace WindowsFormsApp5_ESTE
             // 
             // Cerrar
             // 
-            this.Cerrar.Location = new System.Drawing.Point(307, 487);
+            this.Cerrar.Location = new System.Drawing.Point(307, 503);
             this.Cerrar.Name = "Cerrar";
             this.Cerrar.Size = new System.Drawing.Size(105, 39);
             this.Cerrar.TabIndex = 1;
@@ -60,15 +61,16 @@ namespace WindowsFormsApp5_ESTE
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ControlText;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(49, 40);
+            this.textBox1.Location = new System.Drawing.Point(71, 51);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(910, 416);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(894, 409);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // contextMenuStrip1
@@ -89,6 +91,7 @@ namespace WindowsFormsApp5_ESTE
             this.Controls.Add(this.Volver);
             this.Name = "Costos";
             this.Text = "Costos";
+            this.Load += new System.EventHandler(this.Costos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

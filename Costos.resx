@@ -117,7 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>La cota inferior, es el mejor caso posible, donde buscamos una solución rápida. En nuestro caso, la solución mas rápida se da cuando al asignarle una posición aleatoria  a cada pieza cumpla con todas las restricciones puestas. Una vez que ya tenemos las posiciones asignadas,  llamamos a la función mover (  vez por pieza) y contamos los casilleros ocupados. Si el numero el contador nos da un numero mayor a 63 el tablero generado sirve, si no arranca nuevamente a asignar posiciones. Por eso decimos que lo mejor que podría pasarnos es que a la primer corrida de algoritmo, se nos generen piezas aleatorias que estén bien ubicadas y que cumplan con la condición de llenar el tablero. 
+Analizando el código nos damos cuenta que tenemos un algoritmo de orden lineal que aumenta a medida que aumentamos la cantidad de tableros que queremos buscar. 
+
+La cota superior, es el peor caso. Considerando que lo peor que nos puede pasar es que nunca encuentre soluciones buenas (es decir que cumplan con llenar los tableros) decimos que al asignarle posiciones aleatorias tarde mucho tiempo en encontrar las posiciones que cumplan con las restricciones, nos mueva las piezas y cuando contemos los casilleros ocupados nos de un numero menor a 63 entonces tenemos que reiniciar el procedimiento de asignar. Y así, reiteradas veces haciendo que nuestro algoritmo tarde mucho tiempo en encontrar una solución. 
+
+Para hacer que nuestro algoritmo tarde menos y funcione utilizamos la poda. Por ejemplo: fijamos las torres en las esquinas, en el (0,0) y el (7,7), los alfiles se encuentran en la misma columna que la reina y asu vez cda uno en un casillero de distinto color. Ninguna pieza se puede superponer con otra exceptuando el caballo con el rey,  la reina se encuentra en subtablero de 6x6 evitando asi que se ubique en la misma columna/fila que una torre.</value>
+  </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>66</value>
   </metadata>
 </root>
